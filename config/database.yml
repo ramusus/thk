@@ -15,7 +15,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: thk
+  host: postgresql5.locum.ru
+  database: abbb_thk67
   pool: 5
-  username: thk
+  username: abbb_thk67
   password: eqd_ewsd3kic3s_

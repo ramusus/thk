@@ -4,10 +4,10 @@ require 'bundler/capistrano'
 #require 'capistrano/deepmodules'
 
 set :application, "thk"
-set :deploy_to, "/srv/www/apps/gaidarfund"
+set :deploy_to, "/var/home/hosting_abbb/projects/thk"
 set :deploy_via, :remote_cache
 set :use_sudo, true
-set :user, "www"
+set :user, "hosting_abbb"
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
@@ -15,12 +15,12 @@ set :rvm_ruby_string, "1.9.2"
 set :rvm_type, :user
 
 set :scm, "git"
-set :repository,  "git@ram.unfuddle.com:ram/gaidarfundproject.git"
+set :repository,  "git@github.com:ramusus/thk.git"
 set :branch, "master"
 
-role :web, "beta.gaidarfund.ru"                          # Your HTTP server, Apache/etc
-role :app, "beta.gaidarfund.ru"                          # This may be the same as your `Web` server
-role :db,  "beta.gaidarfund.ru", :primary => true # This is where Rails migrations will run
+role :web, "neon.locum.ru"                          # Your HTTP server, Apache/etc
+role :app, "neon.locum.ru"                          # This may be the same as your `Web` server
+role :db,  "neon.locum.ru", :primary => true # This is where Rails migrations will run
 
 set :css_files, [
   'all.css',
