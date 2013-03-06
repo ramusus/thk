@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: thk
+  pool: 5
+  username: thk
+  password: eqd_ewsd3kic3s_
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: thk
+  pool: 5
+  username: thk
+  password: eqd_ewsd3kic3s_

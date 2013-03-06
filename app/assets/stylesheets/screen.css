@@ -1,0 +1,1131 @@
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+/* line 22, normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+/* line 32, normalize.css */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+/* line 50, normalize.css */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 64, normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Removes default margin.
+ */
+/* line 74, normalize.css */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 86, normalize.css */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+/* line 95, normalize.css */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+/* line 108, normalize.css */
+h1 {
+  font-size: 2em; }
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 116, normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 125, normalize.css */
+b,
+strong {
+  font-weight: bold; }
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+/* line 133, normalize.css */
+dfn {
+  font-style: italic; }
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+/* line 141, normalize.css */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+/* line 154, normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+/* line 163, normalize.css */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/*
+ * Sets consistent quote types.
+ */
+/* line 173, normalize.css */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+/* line 181, normalize.css */
+small {
+  font-size: 80%; }
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 190, normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 197, normalize.css */
+sup {
+  top: -0.5em; }
+
+/* line 201, normalize.css */
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+/* line 213, normalize.css */
+img {
+  border: 0; }
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+/* line 221, normalize.css */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+/* line 233, normalize.css */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+/* line 245, normalize.css */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 256, normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+/* line 270, normalize.css */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 282, normalize.css */
+button,
+input {
+  line-height: normal; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 297, normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+/* line 307, normalize.css */
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+/* line 317, normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 328, normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 341, normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+/* line 350, normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+/* line 360, normalize.css */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+/* line 373, normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'PF Din Comp Pro Medium';
+  src: url("../fonts/pfdintextcomppro-medium.eot");
+  src: url("../fonts/pfdintextcomppro-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/pfdintextcomppro-medium.woff") format("woff"), url("../fonts/pfdintextcomppro-medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PF Din Cond Pro Regular';
+  src: url("../fonts/pfdintextcondpro-regular.eot");
+  src: url("../fonts/pfdintextcondpro-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/pfdintextcondpro-regular.woff") format("woff"), url("../fonts/pfdintextcondpro-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 32, screen.scss */
+body {
+  background: #fff;
+  color: #231f20; }
+
+/* line 36, screen.scss */
+#wrapper {
+  width: 1034px;
+  padding: 0 33px;
+  margin: auto;
+  background: #f5f5f5; }
+
+/* line 43, screen.scss */
+a {
+  text-decoration: none;
+  color: #231f20; }
+
+/* line 50, screen.scss */
+.clear:before {
+  content: " ";
+  display: table; }
+/* line 54, screen.scss */
+.clear:after {
+  content: " ";
+  display: table;
+  clear: both; }
+
+/* line 62, screen.scss */
+.header {
+  position: relative;
+  height: 180px;
+  margin: 0 -33px;
+  background: #fff; }
+
+/* line 68, screen.scss */
+.topmenu {
+  float: right;
+  list-style: none;
+  font: 17px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif; }
+  /* line 73, screen.scss */
+  .topmenu li {
+    display: inline-block;
+    margin-left: 1.5em; }
+  /* line 77, screen.scss */
+  .topmenu a {
+    color: #1c75bc;
+    text-decoration: underline; }
+
+/* line 82, screen.scss */
+.menu {
+  position: absolute;
+  left: 0;
+  right: -10px;
+  bottom: 0;
+  height: 50px;
+  margin: 0;
+  padding-left: 160px;
+  list-style: none;
+  text-align: center;
+  font: 28px/55px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #00326e), color-stop(100%, #006496));
+  background: -webkit-linear-gradient(left, #00326e, #006496);
+  background: -moz-linear-gradient(left, #00326e, #006496);
+  background: -o-linear-gradient(left, #00326e, #006496);
+  background: linear-gradient(left, #00326e, #006496); }
+  /* line 96, screen.scss */
+  .menu:after {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 0 10px 10px;
+    border-color: #99b0c3 transparent transparent #99b0c3;
+    border-style: solid; }
+  /* line 108, screen.scss */
+  .menu li {
+    display: inline-block;
+    margin: 0 40px; }
+  /* line 112, screen.scss */
+  .menu a {
+    color: #fff; }
+
+/* line 116, screen.scss */
+.logo {
+  position: absolute;
+  z-index: 2;
+  bottom: -10px;
+  left: -10px;
+  display: block;
+  width: 166px;
+  height: 176px;
+  background: url(../images/logo.png) no-repeat;
+  text-indent: -1000em; }
+
+/* line 129, screen.scss */
+.fmenu {
+  margin-bottom: 40px;
+  list-style: none;
+  border: solid #58595b;
+  border-width: 1px 0;
+  text-align: center;
+  font: 17px/58px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif; }
+  /* line 137, screen.scss */
+  .fmenu li {
+    display: inline-block;
+    margin: 0 20px; }
+  /* line 141, screen.scss */
+  .fmenu a {
+    color: #58595b; }
+
+/* line 145, screen.scss */
+.partners {
+  list-style: none;
+  padding: 0;
+  text-align: justify;
+  margin: 0 -20px 20px; }
+  /* line 151, screen.scss */
+  .partners li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px 20px; }
+  /* line 156, screen.scss */
+  .partners:after {
+    display: inline-block;
+    width: 100%;
+    content: ''; }
+
+/* line 162, screen.scss */
+.copy {
+  font: 11px/15px Tahoma, Arial, sans-serif;
+  text-align: center;
+  width: 830px;
+  margin: auto;
+  padding-bottom: 2em;
+  color: #414042; }
+  /* line 169, screen.scss */
+  .copy p {
+    margin: 0; }
+  /* line 172, screen.scss */
+  .copy .devby {
+    margin-top: 1em; }
+  /* line 175, screen.scss */
+  .copy a {
+    color: #414042; }
+
+/* line 180, screen.scss */
+.content {
+  margin-bottom: 40px; }
+
+/* line 186, screen.scss */
+.main {
+  width: 766px;
+  float: left; }
+
+/* line 190, screen.scss */
+.sidebar {
+  width: 230px;
+  float: right; }
+
+/* line 194, screen.scss */
+.columns .sidebar {
+  margin-top: 108px; }
+
+/* line 197, screen.scss */
+.sidebar-left {
+  float: left; }
+
+/* line 203, screen.scss */
+.index .main {
+  width: 498px;
+  margin-left: 38px; }
+
+/* line 209, screen.scss */
+h1 {
+  font: normal 50px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
+
+/* line 214, screen.scss */
+.page-menu {
+  font: 28px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0; }
+  /* line 220, screen.scss */
+  .page-menu li {
+    display: inline-block;
+    margin-right: 1em; }
+    /* line 223, screen.scss */
+    .page-menu li:last-child {
+      margin-right: 0; }
+  /* line 227, screen.scss */
+  .page-menu a {
+    color: #000; }
+
+/* line 231, screen.scss */
+.page-submenu {
+  font: 17px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 40px; }
+  /* line 236, screen.scss */
+  .page-submenu li {
+    display: inline-block;
+    margin-right: 1.5em; }
+  /* line 240, screen.scss */
+  .page-submenu a {
+    color: #58595b; }
+
+/* line 245, screen.scss */
+.block-subheader {
+  text-align: center;
+  font: normal 14px/16px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  color: #58595b;
+  margin-bottom: 3em;
+  text-transform: uppercase; }
+  /* line 252, screen.scss */
+  .block-subheader:after {
+    content: '';
+    display: block;
+    margin: auto;
+    padding-bottom: 5px;
+    width: 27px;
+    border-bottom: 1px solid #858482; }
+
+/* line 262, screen.scss */
+.results-legend {
+  font: 14px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #808285;
+  margin-bottom: 0.5em; }
+  /* line 268, screen.scss */
+  .results-legend dt,
+  .results-legend dd {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle; }
+  /* line 273, screen.scss */
+  .results-legend dt {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px; }
+  /* line 278, screen.scss */
+  .results-legend dd {
+    margin-right: 20px; }
+
+/* line 282, screen.scss */
+.results-win {
+  background: #c7e9f0; }
+
+/* line 283, screen.scss */
+.results-loss {
+  background: #80d3ab; }
+
+/* line 284, screen.scss */
+.results-draw {
+  background: #dedede; }
+
+/* line 286, screen.scss */
+.filter {
+  font: 18px/32px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  letter-spacing: -4px; }
+  /* line 289, screen.scss */
+  .filter a {
+    position: relative;
+    display: inline-block;
+    padding: 0 14px 0 20px;
+    color: #41454c;
+    background: #ccc;
+    letter-spacing: 0; }
+    /* line 296, screen.scss */
+    .filter a:after {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: -10px;
+      display: block;
+      border-width: 16px 0 16px 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent #cccccc;
+      width: 0;
+      height: 0;
+      content: ''; }
+    /* line 309, screen.scss */
+    .filter a:nth-child(2n) {
+      background: #dedede; }
+      /* line 311, screen.scss */
+      .filter a:nth-child(2n):after {
+        border-left-color: #dedede; }
+    /* line 315, screen.scss */
+    .filter a.active {
+      color: #fff;
+      background: #1c75bc; }
+      /* line 318, screen.scss */
+      .filter a.active:after {
+        border-left-color: #1c75bc; }
+
+/* line 324, screen.scss */
+.articles .filter {
+  margin-bottom: 30px; }
+
+/* line 327, screen.scss */
+.results-table {
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif; }
+  /* line 331, screen.scss */
+  .results-table td {
+    padding: 0 20px;
+    border: solid whitesmoke;
+    border-width: 3px 0; }
+
+/* line 337, screen.scss */
+.teams {
+  font-size: 35px; }
+
+/* line 340, screen.scss */
+.digit {
+  font-family: "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(49%, #000000), color-stop(49%, #ffffff), color-stop(51%, #ffffff), color-stop(51%, #58595b), color-stop(100%, #58595b));
+  background: -webkit-linear-gradient(top, #000000 0%, #000000 49%, #ffffff 49%, #ffffff 51%, #58595b 51%, #58595b 100%);
+  background: -moz-linear-gradient(top, #000000 0%, #000000 49%, #ffffff 49%, #ffffff 51%, #58595b 51%, #58595b 100%);
+  background: -o-linear-gradient(top, #000000 0%, #000000 49%, #ffffff 49%, #ffffff 51%, #58595b 51%, #58595b 100%);
+  background: linear-gradient(top, #000000 0%, #000000 49%, #ffffff 49%, #ffffff 51%, #58595b 51%, #58595b 100%);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px; }
+
+/* line 347, screen.scss */
+.score {
+  white-space: nowrap; }
+  /* line 349, screen.scss */
+  .score span {
+    display: inline-block;
+    vertical-align: middle; }
+
+/* line 354, screen.scss */
+.score .digit {
+  font-size: 57px;
+  height: 57px;
+  line-height: 57px;
+  width: 48px; }
+
+/* line 360, screen.scss */
+.score-delim {
+  color: #58595b;
+  font-size: 57px;
+  position: relative;
+  top: -5px; }
+
+/* line 367, screen.scss */
+.score-how {
+  margin-left: 0.25em;
+  font-size: 30px;
+  line-height: 57px;
+  color: #414042; }
+
+/* line 374, screen.scss */
+.date {
+  position: relative;
+  font-size: 24px;
+  line-height: 21px;
+  padding-left: 60px;
+  padding-top: 13px;
+  height: 56px; }
+  /* line 381, screen.scss */
+  .date span {
+    display: block;
+    white-space: nowrap; }
+  /* line 385, screen.scss */
+  .date .date-day {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 64px;
+    line-height: 69px;
+    width: 55px;
+    text-align: center; }
+
+/* line 396, screen.scss */
+.sidelist {
+  position: relative;
+  margin-right: -40px;
+  margin-top: 0;
+  background: #e7eaec;
+  list-style: none;
+  padding: 0; }
+  /* line 403, screen.scss */
+  .sidelist:after {
+    position: absolute;
+    right: 0;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 0 7px 7px;
+    border-color: #d1d3d4 transparent transparent #d1d3d4;
+    border-style: solid; }
+
+/* line 415, screen.scss */
+.sidebar-left .sidelist {
+  margin-right: 0;
+  margin-left: -40px; }
+  /* line 418, screen.scss */
+  .sidebar-left .sidelist:after {
+    left: 0;
+    right: auto;
+    border-width: 0 7px 7px 0;
+    border-color: #d1d3d4 #d1d3d4 transparent transparent; }
+
+/* line 425, screen.scss */
+.sidelist-item_featured {
+  background: #5281a1; }
+  /* line 427, screen.scss */
+  .sidelist-item_featured a {
+    color: #fff; }
+
+/* line 431, screen.scss */
+.sidelist-item {
+  position: relative;
+  padding: 13px 20px 13px 110px; }
+
+/* line 435, screen.scss */
+.sidelist-image {
+  position: absolute;
+  left: 30px; }
+
+/* line 439, screen.scss */
+.sidelist-title {
+  display: block;
+  font: 23px/23px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  margin-bottom: 0.25em;
+  text-transform: uppercase; }
+
+/* line 445, screen.scss */
+.sidelist-desc {
+  font: 12px/15px Tahoma, Arial, sans-serif; }
+
+/* line 449, screen.scss */
+.sideblock-header {
+  margin-top: 0;
+  position: relative;
+  margin-left: -21px;
+  background: #00316d;
+  color: #fff;
+  font: normal 22px/32px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center; }
+  /* line 459, screen.scss */
+  .sideblock-header:after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 32px 10px;
+    border-color: #00316d transparent transparent #00316d; }
+  /* line 471, screen.scss */
+  .sideblock-header:before {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 11px;
+    height: 1px;
+    background: #00316d;
+    content: '';
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+/* line 484, screen.scss */
+.sideblock {
+  padding-left: 11px;
+  border-left: 1px solid #00316d; }
+
+/* line 488, screen.scss */
+.socblock {
+  margin-bottom: 20px; }
+
+/* line 492, screen.scss */
+.block-header {
+  border-bottom: 2px solid #7a93b1;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  text-transform: uppercase; }
+  /* line 499, screen.scss */
+  .block-header span {
+    position: relative;
+    top: 17px;
+    display: inline-block;
+    background: #00326e;
+    color: #fff;
+    height: 32px;
+    font: normal 23px/35px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+    padding: 0 42px; }
+    /* line 510, screen.scss */
+    .block-header span:before, .block-header span:after {
+      position: absolute;
+      top: 0;
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 16px 10px; }
+    /* line 520, screen.scss */
+    .block-header span:before {
+      left: -20px;
+      border-color: transparent #00326e transparent transparent; }
+    /* line 524, screen.scss */
+    .block-header span:after {
+      right: -20px;
+      border-color: transparent transparent transparent #00326e; }
+
+/* line 531, screen.scss */
+.person-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 -18px 0;
+  font-family: "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  text-align: center; }
+
+/* line 538, screen.scss */
+.person {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 160px;
+  margin: 0 18px 20px;
+  padding-top: 25px;
+  text-transform: uppercase; }
+
+/* line 548, screen.scss */
+.person-temp {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center; }
+
+/* line 554, screen.scss */
+.person-image {
+  margin: 0 auto 12px;
+  width: 111px;
+  height: 111px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden; }
+
+/* line 561, screen.scss */
+.person-name {
+  font-size: 25px;
+  line-height: 21px; }
+
+/* line 565, screen.scss */
+.person_player .person-name {
+  position: relative;
+  padding-left: 57px;
+  min-height: 56px;
+  margin-bottom: 3px; }
+
+/* line 571, screen.scss */
+.person-num {
+  position: absolute;
+  left: 0;
+  font-size: 74px;
+  line-height: 56px;
+  float: left;
+  letter-spacing: -5px; }
+
+/* line 579, screen.scss */
+.person-info {
+  margin-bottom: 3px; }
+
+/* line 582, screen.scss */
+.person-info-line {
+  padding-left: 57px;
+  position: relative;
+  font-size: 14px;
+  line-height: 14px;
+  height: 28px; }
+
+/* line 589, screen.scss */
+.person-info-percent {
+  position: absolute;
+  left: 0;
+  font-size: 33px;
+  line-height: 28px; }
+
+/* line 595, screen.scss */
+.person-info-statusbar-filler {
+  height: 10px;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #1d75bc), color-stop(100%, #a3dce6));
+  background: -webkit-linear-gradient(left, #1d75bc, #a3dce6);
+  background: -moz-linear-gradient(left, #1d75bc, #a3dce6);
+  background: -o-linear-gradient(left, #1d75bc, #a3dce6);
+  background: linear-gradient(left, #1d75bc, #a3dce6); }
+
+/* line 599, screen.scss */
+.person-info-phys {
+  white-space: nowrap;
+  font-size: 17px; }
+
+/* line 603, screen.scss */
+.person-status {
+  font-size: 17px; }
+
+/* line 606, screen.scss */
+.person-desc {
+  font: 12px/15px Tahoma, Arial, sans-serif;
+  text-transform: none;
+  margin: 0.5em 0; }
+
+/* line 612, screen.scss */
+.article-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: -38px; }
+
+/* line 618, screen.scss */
+.article-item {
+  float: left;
+  width: 230px;
+  margin-left: 38px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  font-family: "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif; }
+
+/* line 626, screen.scss */
+.article-image {
+  display: block;
+  margin-bottom: 6px; }
+
+/* line 630, screen.scss */
+.article-type {
+  position: relative;
+  width: 190px;
+  background: #00316d;
+  height: 32px;
+  margin-bottom: 6px;
+  font: 22px/35px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif; }
+  /* line 637, screen.scss */
+  .article-type a {
+    color: #fff;
+    margin: 0 9px; }
+  /* line 641, screen.scss */
+  .article-type:after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 32px 10px;
+    border-color: #00316d transparent transparent #00316d; }
+
+/* line 654, screen.scss */
+.article-type-section {
+  float: left;
+  position: relative;
+  height: 32px;
+  margin-right: 10px;
+  background: #1c75bb; }
+  /* line 660, screen.scss */
+  .article-type-section:after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 32px 10px;
+    border-color: #1c75bb transparent transparent #1c75bb; }
+
+/* line 673, screen.scss */
+.article-date {
+  float: left;
+  font-size: 13px;
+  margin-left: -1px;
+  letter-spacing: -0.5px; }
+  /* line 678, screen.scss */
+  .article-date .digit {
+    height: 43px;
+    line-height: 45px;
+    font-size: 35px;
+    width: 35px; }
+
+/* line 685, screen.scss */
+.article-title {
+  display: block;
+  margin-left: 45px;
+  margin-right: 45px;
+  font-size: 22px;
+  line-height: 20px; }
+
+/* line 693, screen.scss */
+.loadmore {
+  padding-top: 35px;
+  background: url(../images/icon_loadmore.png) no-repeat 50% 0;
+  font: italic 17px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  color: #58595b;
+  cursor: pointer;
+  text-align: center; }
+
+/* line 702, screen.scss */
+.splash {
+  height: 370px;
+  margin: 0 -33px 38px; }
+
+/* line 706, screen.scss */
+.slider {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+/* line 711, screen.scss */
+.slider-item {
+  position: relative;
+  height: 370px; }
+
+/* line 715, screen.scss */
+.slider-image {
+  position: absolute;
+  right: 0;
+  display: block; }
+
+/* line 720, screen.scss */
+.slider-overlay {
+  position: absolute;
+  padding: 0 33px;
+  padding-top: 45px;
+  height: 325px;
+  width: 465px;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(80%, #000000), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
+  background: -moz-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%); }
+
+/* line 728, screen.scss */
+.slider-title {
+  font: 79px/77px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  color: #fff; }

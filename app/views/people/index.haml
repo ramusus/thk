@@ -1,0 +1,116 @@
+.content.columns.clear
+    .main.page
+        %h1 КОМАНДА
+        %ul.page-menu
+            %li
+                %a{:href => "#"} СОСТАВ ТХК
+            %li
+                %a{:href => "#"} СОСТАВ МХК ТВЕРИЧИ
+            %li
+                %a{:href => "#"} ИСТОРИЯ
+            %li
+                %a{:href => "#"} ПАРТНЕРЫ
+            %li
+                %a{:href => "#"} КОНТАКТЫ
+        %ul.page-submenu
+            %li
+                %a{:href => "#"} нападающие
+            %li
+                %a{:href => "#"} вратари
+            %li
+                %a{:href => "#"} тренеры
+            %li
+                %a{:href => "#"} руководство
+            %li
+                %a{:href => "#"} все
+        .block
+            %h2.block-header
+                %span НАПАДАЮЩИЕ
+            %h3.block-subheader ПОЛНАЯ СТАТИСТИКА ИГРОКОВ НА САЙТЕ ВХЛ
+            %ul.person-list
+                - Person.forwards.each do |person|
+                    %li.person.person_player
+                        - if person.temporary
+                            .person-temp ПРИГЛАШЕН ВРЕМЕННО
+                        .person-image
+                            - if person.image.exists?
+                                %img{:src => person.image, :alt => ""}/
+                        .person-name
+                            - if person.number
+                                %span.person-num= "%02d" % person.number
+                            = person.name
+                        .person-info
+                            .person-info-line
+                                .person-info-percent #{person.goals}%
+                                .person-info-about Голы
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.goals}%"}
+                            .person-info-line
+                                .person-info-percent #{person.efficiency}%
+                                .person-info-about Эффективность
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.efficiency}%"}
+                            .person-info-line
+                                .person-info-percent #{person.fouls}%
+                                .person-info-about Фолы
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.fouls}%"}
+                        .person-phys #{person.height} РОСТ / #{person.weight} ВЕС / #{person.birthyear} Г.Р.
+        .block
+            %h2.block-header
+                %span Вратари
+            %h3.block-subheader ПОЛНАЯ СТАТИСТИКА ИГРОКОВ НА САЙТЕ ВХЛ
+            %ul.person-list
+                - Person.goalkeepers.each do |person|
+                    %li.person.person_player
+                        - if person.temporary
+                            .person-temp ПРИГЛАШЕН ВРЕМЕННО
+                        .person-image
+                            - if person.image.exists?
+                                %img{:src => person.image, :alt => ""}/
+                        .person-name
+                            - if person.number
+                                %span.person-num= "%02d" % person.number
+                            = person.name
+                        .person-info
+                            .person-info-line
+                                .person-info-percent #{person.goals}%
+                                .person-info-about Голы
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.goals}%"}
+                            .person-info-line
+                                .person-info-percent #{person.efficiency}%
+                                .person-info-about Эффективность
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.efficiency}%"}
+                            .person-info-line
+                                .person-info-percent #{person.fouls}%
+                                .person-info-about Фолы
+                                .person-info-statusbar
+                                    .person-info-statusbar-filler{:style => "width: #{person.fouls}%"}
+                        .person-phys #{person.height} РОСТ / #{person.weight} ВЕС / #{person.birthyear} Г.Р.
+        .block
+            %h2.block-header
+                %span Тренеры
+            %ul.person-list
+                - Person.coachs.each do |person|
+                    %li.person
+                        .person-image
+                            %img{:src => "images/data/t1.png", :alt => ""}/
+                        .person-name= person.name
+                        .person-status= person.position
+                        .person-desc= person.description
+                        .person-phys #{person.age} ЛЕТ / СТАЖ #{person.experience} ЛЕТ
+        .block
+            %h2.block-header
+                %span Руководство
+            %ul.person-list
+                - Person.direction.each do |person|
+                    %li.person
+                        .person-image
+                            %img{:src => "images/data/t1.png", :alt => ""}/
+                        .person-name= person.name
+                        .person-status= person.position
+                        .person-desc= person.description
+                        .person-phys #{person.age} ЛЕТ / СТАЖ #{person.experience} ЛЕТ
+    = render "right_column"

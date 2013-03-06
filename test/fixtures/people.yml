@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  number: 1
+  temporary: false
+  goals: 
+  efficiency: 1
+  fouls: 1
+  height: 1
+  weight: 1
+  birthyear: 1
+  age: 1
+  experience: 1
+  image: 
+  position: MyString
+  description: MyText
+
+two:
+  name: MyString
+  number: 1
+  temporary: false
+  goals: 
+  efficiency: 1
+  fouls: 1
+  height: 1
+  weight: 1
+  birthyear: 1
+  age: 1
+  experience: 1
+  image: 
+  position: MyString
+  description: MyText

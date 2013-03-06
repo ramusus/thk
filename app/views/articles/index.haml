@@ -1,0 +1,35 @@
+.content.columns.clear
+  .main.page
+    %h1 Публикации
+    %ul.page-menu
+      %li
+        %a{:href => "#"} Новости
+      %li
+        %a{:href => "#"} Интервью
+      %li
+        %a{:href => "#"} Отчет
+      %li
+        %a{:href => "#"} Репортаж
+      %li
+        %a{:href => "#"} МХЛ
+    .articles
+      .block
+        .filter
+          %a{:href => "#"} ЯНВ - ФЕВ
+          %a{:href => "#"} МАР - АПР
+          %a{:href => "#"} МАЙ - ИЮН
+          %a{:href => "#"} ИЮЛ - АВГ
+          %a.active{:href => "#"} СЕН - ОКТ
+          %a{:href => "#"} НОЯ - ДЕК
+        %ul.article-list.clear
+          - @articles.each do |article|
+            %li.article-item
+              - if article.image.exists?
+                = link_to image_tag(article.image, :alt => ""), article_path(article), {:class => 'article-image'}
+              .article-type
+                %a{:href => "#"} Интервью
+              .article-date
+                .digit= l article.published_at, :format => "%d"
+                = l article.published_at, :format => "%b / %a"
+              = link_to article.title, article_path(article), {:class => 'article-title'}
+  = render "right_column"
