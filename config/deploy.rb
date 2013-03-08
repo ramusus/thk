@@ -1,9 +1,10 @@
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'rvm/capistrano'
+#require 'rvm/capistrano'
 require 'bundler/capistrano'
 #require 'capistrano/deepmodules'
 
 ssh_options[:forward_agent] = true
+default_run_options[:shell] = '/bin/bash --login'
 
 set :application,     "tver-hockey-club"
 set :deploy_server,   "neon.locum.ru"
@@ -21,6 +22,7 @@ role :web,            deploy_server
 role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 
+# Следующие строки необходимы, т.к. ваш проект использует rvm.
 set :rvm_ruby_string, "1.9.2"
 set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
@@ -50,7 +52,7 @@ after "bundle:install", "deploy:auto_migrate"
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
-after "deploy:update_code", :copy_database_config
+before "deploy:auto_migrate", :copy_database_config
 task :copy_database_config, roles => :app do
  db_config = "#{shared_path}/database.yml"
  run "cp #{db_config} #{release_path}/config/database.yml"
