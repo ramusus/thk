@@ -1,0 +1,361 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - ramusus@gmail.com
+    - $2a$10$buI176uaMhGhcP6smK1ejeHZ4deURli3shuTVvRLyvGDnO76zm4Em
+    - !!null 
+    - !!null 
+    - !!null 
+    - '1'
+    - '2013-03-05 19:26:47.300796'
+    - '2013-03-05 19:26:47.300796'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2013-03-05 19:26:47.257059'
+    - '2013-03-05 19:26:47.304186'
+
+---
+articles:
+  columns:
+  - id
+  - title
+  - subtitle
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  - image_meta
+  - social_image_file_name
+  - social_image_content_type
+  - social_image_file_size
+  - social_image_updated_at
+  - main
+  - hide
+  - published_at
+  - title_seo
+  - right_column
+  - created_at
+  - updated_at
+  - articletype_id
+  - content
+  - url
+  records: 
+  - - '1'
+    - ! 'АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 5 ЛЕТ»'
+    - ! 'АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 5 ЛЕТ»'
+    - a2.png
+    - image/png
+    - '98516'
+    - '2013-03-05 19:30:16.531799'
+    - ! 'BAh7BzoNb3JpZ2luYWx7CDoKd2lkdGhpAeY6C2hlaWdodGkB5joJc2l6ZWkD
+
+      1IABOgtzcXVhcmV7CDsGaQHmOwdpAeY7CGkDI3MB
+
+'
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - false
+    - false
+    - '2012-12-26 20:00:00'
+    - !!null 
+    - ''
+    - '2013-03-05 19:30:17.884786'
+    - '2013-03-05 19:30:17.884786'
+    - '1'
+    - ! "<p>\r\n\tблабла</p>\r\n"
+    - ''
+  - - '2'
+    - ! 'АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 3 ЛЕТ»'
+    - ''
+    - u1.png
+    - image/png
+    - '27355'
+    - '2013-03-06 07:00:21.313861'
+    - ! 'BAh7BzoNb3JpZ2luYWx7CDoKd2lkdGhpdDoLaGVpZ2h0aXQ6CXNpemVpAttq
+
+      OgtzcXVhcmV7CDsGaQHmOwdpAeY7CGkD+UYB
+
+'
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - false
+    - false
+    - '2012-12-27 20:00:00'
+    - !!null 
+    - ''
+    - '2013-03-06 07:00:23.533473'
+    - '2013-03-06 07:00:23.533473'
+    - '2'
+    - ! "<p>\r\n\tблабла</p>\r\n"
+    - ''
+
+---
+articletypes:
+  columns:
+  - id
+  - name
+  - name_plural
+  - slug
+  - title
+  - filter_hide
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Интервью
+    - ''
+    - interviews
+    - ''
+    - false
+    - '2013-03-05 19:29:33.668667'
+    - '2013-03-05 19:29:33.668667'
+  - - '2'
+    - Новости
+    - !!null 
+    - ''
+    - ''
+    - false
+    - '2013-03-06 07:00:06.613375'
+    - '2013-03-06 07:00:06.613375'
+
+---
+chunks:
+  columns:
+  - id
+  - title
+  - code
+  - content
+  - visible
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Партнеры проекта
+    - partners
+    - ! "<ul class='partners'>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p01.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p02.png'>\r\n
+      \           </a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>\r\n
+      \             <img alt='' src='images/data/p03.png'>\r\n            </a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p04.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p05.png'>\r\n
+      \           </a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>\r\n
+      \             <img alt='' src='images/data/p06.png'>\r\n            </a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p07.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p08.png'>\r\n
+      \           </a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>\r\n
+      \             <img alt='' src='images/data/p09.png'>\r\n            </a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p10.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p11.png'>\r\n
+      \           </a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>\r\n
+      \             <img alt='' src='images/data/p12.png'>\r\n            </a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p13.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p14.png'>\r\n
+      \           </a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>\r\n
+      \             <img alt='' src='images/data/p15.png'>\r\n            </a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>\r\n              <img
+      alt='' src='images/data/p16.png'>\r\n            </a>\r\n          </li>\r\n
+      \         <li>\r\n            <a href='#'>\r\n              <img alt='' src='images/data/p17.png'>\r\n
+      \           </a>\r\n          </li>\r\n        </ul>"
+    - true
+    - '2013-03-05 19:31:48.226047'
+    - '2013-03-05 19:40:40.894254'
+  - - '2'
+    - Копирайт
+    - copyright
+    - ! "          <p>© 2012 Тверской Хоккейный Клуб. Ежедневное интернет-издание
+      о жизни тверского хоккея.</p>\r\n          <p>Исключительные права на дизайн
+      и всю информацию веб-сайта, а также на подбор и расположение материалов принадлежат
+      Тверскому Хоккейному Клубу.</p>\r\n          <p>Использование материалов сайта
+      разрешено только с письменного разрешения. Воспроизведение товарного знака,
+      фотографий или новостей любым способом без письменного разрешения запрещено
+      и влечет ответственность, предусмотренную законодательством Российской Федерации
+      о защите авторских прав.</p>\r\n          <p>Запрещается автоматизированное
+      извлечение информации сайта любыми сервисами без официального разрешения.</p>\r\n
+      \         <p>При цитировании материалов ссылка на <a href=\"#\">www.thk.ru</a>
+      обязательна.</p>\r\n          <p class='devby'>\r\n            Разработано\r\n
+      \           <a href='#'>Vodka-Interactive</a>\r\n          </p>"
+    - true
+    - '2013-03-05 19:32:26.768881'
+    - '2013-03-05 19:32:26.768881'
+  - - '3'
+    - Мы в соц. сетях
+    - social_links
+    - ! "            <div class='socblock'>\r\n              <img alt='' src='images/data/twitter.png'>\r\n
+      \           </div>\r\n            <div class='socblock'>\r\n              <img
+      alt='' src='images/data/youtube.png'>\r\n            </div>\r\n            <div
+      class='socblock'>\r\n              <img alt='' src='images/data/vk.png'>\r\n
+      \           </div>\r\n            <div class='socblock'>\r\n              <img
+      alt='' src='images/data/facebook.png'>\r\n            </div>"
+    - true
+    - '2013-03-05 19:33:06.325409'
+    - '2013-03-05 19:33:06.325409'
+  - - '4'
+    - Верхнее меню
+    - header_menu
+    - ! "<ul class='topmenu'>\r\n          <li>\r\n            <a href='#'>ВХЛ</a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>Болельщики ТХК</a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>Русская школа хоккея</a>\r\n
+      \         </li>\r\n        </ul>"
+    - true
+    - '2013-03-06 07:29:05.634109'
+    - '2013-03-06 07:29:41.972127'
+  - - '5'
+    - Нижнее меню
+    - footer_menu
+    - ! "        <ul class='fmenu'>\r\n          <li>\r\n            <a href='/about/'>О
+      портале</a>\r\n          </li>\r\n          <li>\r\n            <a href='#'>МХК</a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>Тверичи</a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>Вакансии</a>\r\n
+      \         </li>\r\n          <li>\r\n            <a href='#'>Контакты</a>\r\n
+      \         </li>\r\n        </ul>"
+    - true
+    - '2013-03-06 07:29:29.153433'
+    - '2013-03-06 07:30:53.584952'
+
+---
+people:
+  columns:
+  - id
+  - name
+  - number
+  - temporary
+  - goals
+  - efficiency
+  - fouls
+  - height
+  - weight
+  - birthyear
+  - age
+  - experience
+  - position
+  - description
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  - created_at
+  - updated_at
+  - occupation
+  records: 
+  - - '1'
+    - СЕМЕН ПОДГОРНЫЙ
+    - '3'
+    - false
+    - '99'
+    - '50'
+    - '30'
+    - '179'
+    - '56'
+    - '1980'
+    - !!null 
+    - !!null 
+    - ''
+    - ''
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - '2013-03-06 05:42:58.623154'
+    - '2013-03-06 06:16:33.362823'
+    - '1'
+  - - '2'
+    - Вова Зябликов
+    - '4'
+    - true
+    - '70'
+    - '30'
+    - '50'
+    - '172'
+    - '67'
+    - '1983'
+    - '15'
+    - '15'
+    - ''
+    - ''
+    - u1.png
+    - image/png
+    - '27355'
+    - '2013-03-06 06:30:05.984598'
+    - '2013-03-06 06:06:09.065186'
+    - '2013-03-06 06:30:06.1439'
+    - '1'
+  - - '3'
+    - ВИТАЛИЙ СМОЛИН
+    - !!null 
+    - false
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - !!null 
+    - '46'
+    - '36'
+    - СТАРШИЙ ТРЕНЕР
+    - Мастер спорта РФ по хоккею с шайбой. Впервые в Твери специалист международного
+      уровня.
+    - t1.png
+    - image/png
+    - '22184'
+    - '2013-03-06 06:29:31.389317'
+    - '2013-03-06 06:17:37.954179'
+    - '2013-03-06 06:29:34.61215'
+    - '3'
+
+---
+games:
+  columns:
+  - id
+  - name
+  - score
+  - date
+  - result
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - ! 'ТХК : КАЗЦИНК-ТОРПЕДО'
+    - '4:3'
+    - '2013-03-01 04:00:00'
+    - '1'
+    - '2013-03-06 07:17:36.605478'
+    - '2013-03-06 07:17:36.605478'
+  - - '2'
+    - ! 'ТХК : КАЗЦИНК-ТОРПЕДО'
+    - '2:3'
+    - '2013-03-02 03:45:00'
+    - '2'
+    - '2013-03-06 07:17:47.891214'
+    - '2013-03-06 07:17:47.891214'
+  - - '3'
+    - ! 'ТХК : КАЗЦИНК-ТОРПЕДО'
+    - '2:2'
+    - '2013-03-02 21:45:00'
+    - '3'
+    - '2013-03-06 07:18:01.997001'
+    - '2013-03-06 07:18:01.997001'
