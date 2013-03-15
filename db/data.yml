@@ -22,13 +22,13 @@ users:
     - !!null 
     - !!null 
     - !!null 
-    - '1'
-    - '2013-03-05 19:26:47.300796'
+    - '2'
+    - '2013-03-15 04:04:13.744432'
     - '2013-03-05 19:26:47.300796'
     - 127.0.0.1
     - 127.0.0.1
     - '2013-03-05 19:26:47.257059'
-    - '2013-03-05 19:26:47.304186'
+    - '2013-03-15 04:04:13.747197'
 
 ---
 articles:
@@ -236,6 +236,17 @@ chunks:
     - true
     - '2013-03-06 07:29:29.153433'
     - '2013-03-06 07:30:53.584952'
+  - - '6'
+    - ИНФОРМАЦИЯ НА САЙТЕ ВХЛ
+    - info_vhl
+    - ! "      <ul class='info-links'>\r\n        <li>\r\n          <a href='#'>СТАТИСТИКА
+      ИГРОКОВ</a>\r\n        </li>\r\n        <li>\r\n          <a href='#'>ТУРНИРНАЯ
+      ТАБЛИЦА <br/>ЧЕМПИОНАТА ВХЛ 2012-13</a>\r\n        </li>\r\n        <li>\r\n
+      \         <a href='#'>ТУРНИРНАЯ ТАБЛИЦА <br/>ЧЕМПИОНАТА МХЛ 2012-13</a>\r\n
+      \       </li>\r\n      </ul>"
+    - true
+    - '2013-03-15 04:25:09.580045'
+    - '2013-03-15 04:25:09.580045'
 
 ---
 people:
@@ -359,3 +370,51 @@ games:
     - '3'
     - '2013-03-06 07:18:01.997001'
     - '2013-03-06 07:18:01.997001'
+
+---
+slides:
+  columns:
+  - id
+  - position
+  - color
+  - background_color
+  - content
+  - link
+  - hide
+  - created_at
+  - updated_at
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  records: 
+  - - '1'
+    - '0'
+    - !!null 
+    - !!null 
+    - ! "              <span class=\"slider-title-type\">МХЛ</span>\r\n              <span>Победа!</span>\r\n
+      \             <span class=\"score\">\r\n                <span class=\"digit\">4</span>\r\n
+      \               <span class=\"score-delim\">:</span>\r\n                <span
+      class=\"digit\">2</span>\r\n              </span>\r\n              <span class=\"slider-title-teams\">\r\n
+      \               ТХК / КАЗЦИНК-ТОРПЕДО\r\n              </span>"
+    - ya.ru
+    - false
+    - '2013-03-15 04:08:10.245938'
+    - '2013-03-15 04:08:10.245938'
+    - s1.jpg
+    - image/jpeg
+    - '88082'
+    - '2013-03-15 04:08:09.068801'
+  - - '2'
+    - '1'
+    - !!null 
+    - !!null 
+    - ! '            <a class="slider-title" href="#">РЕПОРТАЖ ИЗ СМОЛЕНСКА</a>'
+    - google.com
+    - false
+    - '2013-03-15 04:08:42.679965'
+    - '2013-03-15 04:08:42.679965'
+    - s1.jpg
+    - image/jpeg
+    - '88082'
+    - '2013-03-15 04:08:42.536512'
