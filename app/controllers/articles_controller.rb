@@ -15,35 +15,15 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id]) || not_found
 
-    # redirect to right subdomain
-    if @article.project and not Subdomain.matches?(request)
-      redirect_to article_path(@article) and return
-    end
-
-    # redirect to forbidden if article only for signed
-    if @article.only_for_signed and not user_signed_in?
-      return forbidden
-    end
-
-    if @article.type.page and not @article.project
-      @menu_class = @article.type.page.color_class
-    elsif @article.project
-      @menu_class = 'projects'
-    elsif @article.is_news?
-      @menu_class = 'news'
-    else
-      @menu_class = 'articles'
-    end
-
-    articles = Article.visible.where("articletype_id = ?", @article.articletype_id)
-    if @article.project
-      articles = articles.where("project_id = ?", @article.project_id)
-    else
-      articles = articles.where("project_id < 1") # becouse in mysql value is 0, in postgres NULL
-    end
-    @next = articles.where("published_at > ?", @article.published_at).last
-    @previous = articles.where("published_at < ?", @article.published_at).first
-    @more = articles.where("id != ?", @article.id).limit(5)
+#    articles = Article.visible.where("articletype_id = ?", @article.articletype_id)
+#    if @article.project
+#      articles = articles.where("project_id = ?", @article.project_id)
+#    else
+#      articles = articles.where("project_id < 1") # becouse in mysql value is 0, in postgres NULL
+#    end
+#    @next = articles.where("published_at > ?", @article.published_at).last
+#    @previous = articles.where("published_at < ?", @article.published_at).first
+#    @more = articles.where("id != ?", @article.id).limit(5)
 
     render "show"
   end

@@ -32,7 +32,6 @@ set :repository,  "git@github.com:ramusus/thk.git"
 set :branch, "master"
 
 set :css_files, [
-  'all.css',
   'normalize.css',
   'screen.css',
 ]

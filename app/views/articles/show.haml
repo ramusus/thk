@@ -1,0 +1,111 @@
+:javascript
+  $(function() {
+    $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
+  });
+.content.columns.clear
+  .main.page
+    %h1 Публикации
+    = render "top_menu"
+    .article
+      .article-date
+        = l @article.published_at, :format => "%Y"
+        .digit= l @article.published_at, :format => "%d"
+        = l @article.published_at, :format => "%b / %a"
+      %h2= @article.title
+      .article-lead
+        %p Я думаю, что игра болельщикам понравилась. Игра была достойная: воевали два противника равные по силе. Очень жаль, что ошибки отдельных игроков привели к пропущенным голам и поражению. Черепанова я снял не потому, что он плохо играл. Просто после четырех пропущенных голов его нельзя было оставлять — ни к чему травмировать парня.
+      .article-by
+        %p Текст Анна Федорова
+        %p Фото Павел Сапронов
+      .article-social
+        %img{:src => "/images/data/social.png", :alt => ""}
+      .article-slider
+        .slider
+          .slider-box
+            .slider-list
+              %li.slider-item.current
+                %img{:src => "/images/data/art1.jpg", :alt => ""}
+                .article-slider-desc Вечеслав Семенов, нападающий ТХК
+              %li.slider-item
+                %img{:src => "/images/data/art1.jpg", :alt => ""}
+                .article-slider-desc Вечеслав Семенов, ТХК
+              %li.slider-item
+                %img{:src => "/images/data/art1.jpg", :alt => ""}
+                .article-slider-desc Вечеслав Семенов, нападающий ТХК
+              %li.slider-item
+                %img{:src => "/images/data/art1.jpg", :alt => ""}
+                .article-slider-desc Вечеслав Семенов, нападающий ТХК
+          .slider-nav
+            %b.slider-nav-prev «
+            <span class="slider-nav-num">1</span>/<span class="slider-nav-of"></span>
+            %b.slider-nav-next »
+      %p
+        %strong Вечеслав Семенов:
+        Я думаю, что игра болельщикам понравилась. Игра была достойная: воевали два противника равные по силе. Очень жаль, что ошибки отдельных игроков привели к пропущенным голам и поражению. Черепанова я снял не потому, что он плохо играл. Просто после четырех пропущенных голов его нельзя было оставлять – ни к чему травмировать парня. Голы все забиты были с добивания. Еще раз подчеркиваю, что отдельные игроки проиграли матч, не вся команда. Мы доказали это в третьем периоде, когда собрались и продолжили игру. С разницей в четыре очка это непросто. ТХК поздравляю с победой, команда хорошо играла, молодцы.
+
+      %p
+        %strong Анна Федорова:
+        На ваш взгляд, вся команда была сегодня на высоте?
+
+      %p
+        %strong В.C.:
+        Не люблю никого выделять, но скажу, что Роман Костромин сыграл сегодня очень здорово.
+        %br Это был его лучший матч.Ребята сыграли удачно. Сергей Барбашев забил гол, и Роман Любимов выглядел очень неплохо. Такая помощь нам нужна.
+      %blockquote
+        %p «Был момент, когда марсиане чуть не сдались, удивляясь напорству и бесстаршию вратаря, а также реву с трибун»
+      %p
+        %strong В.C.:
+        Полностью согласен с Виктором Ивановичем: игра была интересной и для болельщиков, и для команд. Для меня как для тренера она оказалась очень нервной. Вести 5:1 и чуть не проиграть… Удаления в конце матча спасли нас. Тем не менее, результат хороший, я рад, что ребята начали набирать форму, сыграли сегодня здорово. Будем готовиться к следующему матчу.
+
+      %p
+        %strong А.Ф.:
+        На ваш взгляд, вся команда была сегодня на высоте? Не люблю никого выделять, но скажу, что Роман Костромин сыграл сегодня очень здорово. Это был его лучший матч.
+
+      %p
+        %strong В.С.:
+        Как оцениваете помощь армейцев? Ребята сыграли удачно. Сергей Барбашев забил гол, и Роман Любимов выглядел очень неплохо. Такая помощь нам нужна.
+    .article-related
+      %h2 Интересные материалы
+      %ul.article-list.clear
+        %li.article-item
+          %a.article-image{:href => "#"}
+            %img{:src => "/images/data/a2.png", :alt => ""}/
+          .article-type
+            %a{:href => "#"} Интервью
+          .article-date
+            .digit 27
+            ДЕК / ВС
+          %a.article-title{:href => "#"} АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 5 ЛЕТ»
+        %li.article-item
+          %a.article-image{:href => "#"}
+            %img{:src => "/images/data/a2.png", :alt => ""}/
+          .article-type
+            .article-type-section
+              %a{:href => "#"} МХК
+            %a{:href => "#"} Интервью
+          .article-date
+            .digit 27
+            дек / вс
+          %a.article-title{:href => "#"} АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 5 ЛЕТ»
+        %li.article-item
+          %a.article-image{:href => "#"}
+            %img{:src => "/images/data/a2.png", :alt => ""}/
+          .article-type
+            %a{:href => "#"} Интервью
+          .article-date
+            .digit 27
+            дек / вс
+          %a.article-title{:href => "#"} АНДРЕЙ ЗАЛИВИН: «Я В ХОККЕЕ ИГРАЮ С 5 ЛЕТ»
+    .article-comments.tabs
+      %h2
+        КОММЕНТАРИИ
+        %span.tabs-switcher
+          %span.tabs-switcher-item.active Вконтакте
+          /
+          %span.tabs-switcher-item Facebook
+      .tabs-container
+        .tabs-tab.active
+          %img{:src => "/images/data/c_vk.png", :alt => ""}
+        .tabs-tab
+          фб
+  = render "right_column"

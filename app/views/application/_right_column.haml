@@ -1,25 +1,6 @@
 .sidebar
   %ul.sidelist
-    %li.sidelist-item.sidelist-item_featured
-      %a{:href => "#"}
-        %img.sidelist-image{:src => "images/data/a1.png", :alt => ""}/
-        %span.sidelist-title КОНКУРС
-        %span.sidelist-desc Сочини лучшую кричалку для любимой команды
-    %li.sidelist-item
-      %a{:href => "#"}
-        %img.sidelist-image{:src => "images/data/a1.png", :alt => ""}/
-        %span.sidelist-title КОНКУРС
-        %span.sidelist-desc Сочини лучшую кричалку для любимой команды
-    %li.sidelist-item
-      %a{:href => "#"}
-        %img.sidelist-image{:src => "images/data/a1.png", :alt => ""}/
-        %span.sidelist-title КОНКУРС
-        %span.sidelist-desc Сочини лучшую кричалку для любимой команды
-    %li.sidelist-item
-      %a{:href => "#"}
-        %img.sidelist-image{:src => "images/data/a1.png", :alt => ""}/
-        %span.sidelist-title КОНКУРС
-        %span.sidelist-desc Сочини лучшую кричалку для любимой команды
+    = render "sidebar"
   .sideblock
     %h3.sideblock-header Мы в соцсетях
     = @social_links

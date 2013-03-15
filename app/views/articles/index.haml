@@ -1,17 +1,11 @@
+:javascript
+  $(function() {
+    $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
+  });
 .content.columns.clear
   .main.page
     %h1 Публикации
-    %ul.page-menu
-      %li
-        %a{:href => "#"} Новости
-      %li
-        %a{:href => "#"} Интервью
-      %li
-        %a{:href => "#"} Отчет
-      %li
-        %a{:href => "#"} Репортаж
-      %li
-        %a{:href => "#"} МХЛ
+    = render "top_menu"
     .articles
       .block
         .filter

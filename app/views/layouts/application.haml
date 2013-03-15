@@ -1,4 +1,4 @@
-!!!
+
 /[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
 /[if IE 7] <html class="no-js lt-ie9 lt-ie8">
 /[if IE 8] <html class="no-js lt-ie9">
@@ -18,17 +18,20 @@
         /[if lt IE 7]
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         / <![endif]
+        %img.cover{:src => "/images/bg.jpg", :alt => ""}
         #wrapper
             %header.header
                 = @header_menu
                 = link_to 'ТХК', root_path, {:class => 'logo'}
-                %ul.menu
-                    %li
-                        = link_to 'Команда', team_path
-                    %li
-                        = link_to 'Матчи', games_path
-                    %li
-                        = link_to 'Публикации', articles_path
+                .stick
+                    %a.logo{:href => "/"} ТХК
+                    %ul.menu
+                        %li
+                            = link_to 'Команда', team_path
+                        %li
+                            = link_to 'Матчи', games_path
+                        %li
+                            = link_to 'Публикации', articles_path
             = yield
             %footer.footer
                 = @footer_menu

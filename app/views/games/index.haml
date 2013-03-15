@@ -1,3 +1,7 @@
+:javascript
+  $(function() {
+    $('ul.menu li a[href$="#{games_path}"]').parent().addClass('active');
+  });
 .content.columns.clear
   .main.page
     %h1 Матчи

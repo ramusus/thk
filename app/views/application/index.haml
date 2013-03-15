@@ -1,0 +1,67 @@
+.splash
+  .slider
+    .slider-box
+      %ul.slider-list
+        - @slides.each do |slide|
+          %li.slider-item.slider-item_result.current.inverted
+            %img.slider-image{:src => "/images/data/s1.jpg", :alt => ""}/
+            .slider-overlay
+              %a.slider-title{:href => slide.link}
+                = slide.content.html_safe
+      .slider-nav
+        %b.slider-nav-prev «
+        <span class="slider-nav-num">1</span>/<span class="slider-nav-of"></span>
+        %b.slider-nav-next »
+.content.index.clear
+  .sidebar.sidebar-left
+    %ul.sidelist
+      = render "sidebar"
+  .main.page
+    .block
+      %ul.article-list.clear
+        - @articles.each do |article|
+          %li.article-item
+            - if article.image.exists?
+              = link_to image_tag(article.image, :alt => ""), article_path(article), {:class => 'article-image'}
+            .article-type
+              %a{:href => "#"} Интервью
+            .article-date
+              .digit= l article.published_at, :format => "%d"
+              = l article.published_at, :format => "%b / %a"
+            = link_to article.title, article_path(article), {:class => 'article-title'}
+    .loadmore
+      Загрузить еще материалов ...
+
+  .sidebar
+    .sideblock.tabs
+      %h3.sideblock-header МАТЧИ
+      %p.tabs-switcher
+        %span.tabs-switcher-item.active ближайшие
+        %span.tabs-switcher-item прошедшие
+      .tabs-container
+        .tabs-tab.active
+          %ul.list
+            - @games_past.each do |game|
+              %li
+                .article-date
+                  .digit= l game.date, :format => "%d"
+                  %br
+                  = l game.date, :format => "%b / %a / %H:%M"
+                %p= game.name
+        .tabs-tab
+          %ul.list
+            - @games_past.each do |game|
+              %li
+                .score
+                  %span.digit= game.score.split(':')[0]
+                  %span.score-delim :
+                  %span.digit= game.score.split(':')[1]
+                  %br
+                  = l game.date, :format => "%d %b / %a"
+                %p= game.name
+    .sideblock.info
+      %h3.sideblock-header ИНФОРМАЦИЯ НА САЙТЕ ВХЛ
+      = @info_vhl
+    .sideblock
+      %h3.sideblock-header Мы в соцсетях
+      = @social_links

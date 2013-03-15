@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306071150) do
+ActiveRecord::Schema.define(:version => 20130315040343) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -110,6 +110,21 @@ ActiveRecord::Schema.define(:version => 20130306071150) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "slides", :force => true do |t|
+    t.integer  "position"
+    t.string   "color"
+    t.string   "background_color"
+    t.text     "content"
+    t.string   "link"
+    t.boolean  "hide"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

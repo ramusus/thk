@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
     @articletypes = Articletype.where(:filter_hide => false)
 
-    ['partners','social_links','copyright','header_menu','footer_menu'].each do |var_name|
+    ['partners','social_links','copyright','header_menu','footer_menu','info_vhl'].each do |var_name|
       chunk = Chunk.find_by_code(var_name)
       if chunk and chunk.visible
         chunk = chunk.content.html_safe
@@ -37,6 +37,11 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    @articles = Article.all
+    @slides = Slide.visible
+    @games_past = Game.all
+    @games_future = Game.all
+
     respond_to do |format|
       format.html
     end
