@@ -8,13 +8,6 @@
     = render "top_menu"
     .articles
       .block
-        .filter
-          %a{:href => "#"} ЯНВ - ФЕВ
-          %a{:href => "#"} МАР - АПР
-          %a{:href => "#"} МАЙ - ИЮН
-          %a{:href => "#"} ИЮЛ - АВГ
-          %a.active{:href => "#"} СЕН - ОКТ
-          %a{:href => "#"} НОЯ - ДЕК
         %ul.article-list.clear
           - @articles.each do |article|
             %li.article-item

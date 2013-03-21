@@ -1,0 +1,21 @@
+:javascript
+  $(function() {
+    $('ul.page-menu li a[href="'+document.location.pathname+'"]').parent().addClass('active');
+  });
+.content.columns.clear
+  .main.page
+    %h1= @page.title.html_safe
+    %ul.page-menu
+      %li
+        %a{:href => thk_path} СОСТАВ ТХК
+      %li
+        %a{:href => mhk_path} СОСТАВ МХК ТВЕРИЧИ
+      %li
+        %a{:href => "/history/"} ИСТОРИЯ
+      %li
+        %a{:href => "/partners/"} ПАРТНЕРЫ
+      %li
+        %a{:href => "/contacts/"} КОНТАКТЫ
+    .article
+      = @page.content.html_safe
+  = render "right_column"
