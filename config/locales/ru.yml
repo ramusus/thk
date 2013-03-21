@@ -16,6 +16,7 @@ ru:
       blog: "Блог"
       static_file: "Файл"
       lecture_subscriber: "Лекции. Подписчик"
+      championship: "Чемпионат"
     attributes:
       page:
         title: "Заголовок"
@@ -30,6 +31,10 @@ ru:
         code: "Код"
         content: "Содержимое"
         visible: "Отображать?"
+      championship:
+        name: "Название"
+        archive: "В архиве"
+        link: "Ссылка на таблицу"
       static_file:
         alt: "Alt"
         code: "Код"

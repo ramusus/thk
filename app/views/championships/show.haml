@@ -1,0 +1,39 @@
+:javascript
+  $(function() {
+    $('ul.menu li a[href$="#{championships_path}"]').parent().addClass('active');
+  });
+.content.columns.clear.tabs
+  .main.page
+    %h1 Матчи
+    %ul.page-menu
+      - @championships.each do |championship|
+        %li{:class => (championship.id == @championship.id ? 'active' : '')}
+          = link_to championship.name, championship
+    %p.page-submenu.tabs-switcher
+      %span.tabs-switcher-item.active будущие игры
+      %span.tabs-switcher-item прошедшие игры
+    .block
+      - if not @championship.link.empty?
+        %h3.block-subheader
+          = link_to 'ТАБЛИЦА ЧЕМПИОНАТА НА САЙТЕ ВХЛ', @championship.link
+      .results.tabs-container
+        %dl.results-legend
+          %dt.results-win
+          %dd Победа
+          %dt.results-loss
+          %dd Проигрыш
+        .tabs-tab.active
+          %table.results-table
+            = render :partial => 'game', :collection => @games.future
+        .tabs-tab
+          %table.results-table
+            = render :partial => 'game', :collection => @games.past
+  = render "right_column"
+-#
+        .filter
+          %a{:href => "#"} ЯНВ - ФЕВ
+          %a{:href => "#"} МАР - АПР
+          %a{:href => "#"} МАЙ - ИЮН
+          %a{:href => "#"} ИЮЛ - АВГ
+          %a{:href => "#"} СЕН - ОКТ
+          %a.active{:href => "#"} НОЯ - ДЕК

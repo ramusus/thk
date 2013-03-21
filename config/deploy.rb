@@ -7,7 +7,7 @@ ssh_options[:forward_agent] = true
 default_run_options[:shell] = '/bin/bash --login'
 
 set :application,     "tver-hockey-club"
-set :deploy_server,   "neon.locum.ru"
+set :deploy_server,   "boron.locum.ru"
 
 set :bundle_without,  [:development, :test]
 

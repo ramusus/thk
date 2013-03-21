@@ -39,8 +39,7 @@ class ApplicationController < ActionController::Base
   def index
     @articles = Article.all
     @slides = Slide.visible
-    @games_past = Game.all
-    @games_future = Game.all
+    @games = Game
 
     respond_to do |format|
       format.html

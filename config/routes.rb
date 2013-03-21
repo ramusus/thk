@@ -1,5 +1,5 @@
 Project::Application.routes.draw do
-  resources :games
+  resources :championships
 
 
   resources :articles

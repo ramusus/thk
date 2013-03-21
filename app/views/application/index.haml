@@ -41,24 +41,24 @@
       .tabs-container
         .tabs-tab.active
           %ul.list
-            - @games_past.each do |game|
+            - @games.future.slice(0,3).each do |game|
               %li
                 .article-date
                   .digit= l game.date, :format => "%d"
                   %br
                   = l game.date, :format => "%b / %a / %H:%M"
-                %p= game.name
+                %p= "#{game.team_text} : #{game.rival}"
         .tabs-tab
           %ul.list
-            - @games_past.each do |game|
+            - @games.past.slice(0,3).each do |game|
               %li
                 .score
-                  %span.digit= game.score.split(':')[0]
+                  %span.digit= game.score_host
                   %span.score-delim :
-                  %span.digit= game.score.split(':')[1]
+                  %span.digit= game.score_guest
                   %br
                   = l game.date, :format => "%d %b / %a"
-                %p= game.name
+                %p= "#{game.team_text} : #{game.rival}"
     .sideblock.info
       %h3.sideblock-header ИНФОРМАЦИЯ НА САЙТЕ ВХЛ
       = @info_vhl
