@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20130321135740) do
     t.integer  "experience"
     t.string   "position"
     t.text     "description"
+    t.string   "notice", :default => ''
     t.integer  "team_id"
     t.string   "image_file_name"
     t.string   "image_content_type"

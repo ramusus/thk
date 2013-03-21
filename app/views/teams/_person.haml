@@ -1,0 +1,33 @@
+%li.person{:class => player ? 'person_player' : ''}
+  - if not person.notice.empty?
+    .person-temp= person.notice
+  .person-image
+    - if person.image.exists?
+      %img{:src => person.image, :alt => person.name}/
+  .person-name
+    - if person.number
+      %span.person-num= "%02d" % person.number
+    = person.name
+  - if not person.position.empty?
+    .person-status= person.position
+  - if not person.description.empty?
+    .person-desc= person.description
+  .person-phys= person.stat
+
+-#
+              .person-info
+                .person-info-line
+                  .person-info-percent #{person.goals}%
+                  .person-info-about Голы
+                  .person-info-statusbar
+                    .person-info-statusbar-filler{:style => "width: #{person.goals}%"}
+                .person-info-line
+                  .person-info-percent #{person.efficiency}%
+                  .person-info-about Эффективность
+                  .person-info-statusbar
+                    .person-info-statusbar-filler{:style => "width: #{person.efficiency}%"}
+                .person-info-line
+                  .person-info-percent #{person.fouls}%
+                  .person-info-about Фолы
+                  .person-info-statusbar
+                    .person-info-statusbar-filler{:style => "width: #{person.fouls}%"}

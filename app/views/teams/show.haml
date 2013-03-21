@@ -37,99 +37,32 @@
       .block#forwards
         %h2.block-header
           %span НАПАДАЮЩИЕ
-        - if @team.people_statistic
+        - if not @team.people_statistic.empty?
           = @team.people_statistic.html_safe
         %ul.person-list
-          - @people.forwards.each do |person|
-            %li.person.person_player
-              - if person.description
-                .person-temp= person.description
-              .person-image
-                - if person.image.exists?
-                  %img{:src => person.image, :alt => ""}/
-              .person-name
-                - if person.number
-                  %span.person-num= "%02d" % person.number
-                = person.name
-              .person-phys #{person.height} РОСТ / #{person.weight} ВЕС / #{person.birthyear} Г.Р.
+          = render :partial => 'person', :collection => @people.forwards, :locals => {:player => true}
     - if @people.defenders.count > 0
       .block#defenders
         %h2.block-header
           %span Защитики
-        - if @team.people_statistic
-          = @team.people_statistic.html_safe
         %ul.person-list
-          - @people.defenders.each do |person|
-            %li.person.person_player
-              - if person.description
-                .person-temp= person.description
-              .person-image
-                - if person.image.exists?
-                  %img{:src => person.image, :alt => ""}/
-              .person-name
-                - if person.number
-                  %span.person-num= "%02d" % person.number
-                = person.name
-              .person-phys #{person.height} РОСТ / #{person.weight} ВЕС / #{person.birthyear} Г.Р.
+          = render :partial => 'person', :collection => @people.defenders, :locals => {:player => true}
     - if @people.goalkeepers.count > 0
       .block#goalkeepers
         %h2.block-header
           %span Вратари
         %ul.person-list
-          - @people.goalkeepers.each do |person|
-            %li.person.person_player
-              - if person.description
-                .person-temp= person.description
-              .person-image
-                - if person.image.exists?
-                  %img{:src => person.image, :alt => ""}/
-              .person-name
-                - if person.number
-                  %span.person-num= "%02d" % person.number
-                = person.name
-              .person-phys #{person.height} РОСТ / #{person.weight} ВЕС / #{person.birthyear} Г.Р.
+          = render :partial => 'person', :collection => @people.goalkeepers, :locals => {:player => true}
     - if @people.coaches.count > 0
       .block#coaches
         %h2.block-header
           %span Тренеры
         %ul.person-list
-          - @people.coaches.each do |person|
-            %li.person
-              .person-image
-                %img{:src => "images/data/t1.png", :alt => ""}/
-              .person-name= person.name
-              .person-status= person.position
-              .person-desc= person.description
-              .person-phys #{person.birthyear} Г.Р. / СТАЖ #{person.experience} ЛЕТ
+          = render :partial => 'person', :collection => @people.coaches, :locals => {:player => false}
     - if @people.direction.count > 0
       .block#direction
         %h2.block-header
           %span Руководство
         %ul.person-list
-          - @people.direction.each do |person|
-            %li.person
-              .person-image
-                %img{:src => "images/data/t1.png", :alt => ""}/
-              .person-name= person.name
-              .person-status= person.position
-              .person-desc= person.description
-              .person-phys #{person.birthyear} Г.Р. / СТАЖ #{person.experience} ЛЕТ
+          = render :partial => 'person', :collection => @people.direction, :locals => {:player => false}
   = render "right_column"
-
--#
-              .person-info
-                .person-info-line
-                  .person-info-percent #{person.goals}%
-                  .person-info-about Голы
-                  .person-info-statusbar
-                    .person-info-statusbar-filler{:style => "width: #{person.goals}%"}
-                .person-info-line
-                  .person-info-percent #{person.efficiency}%
-                  .person-info-about Эффективность
-                  .person-info-statusbar
-                    .person-info-statusbar-filler{:style => "width: #{person.efficiency}%"}
-                .person-info-line
-                  .person-info-percent #{person.fouls}%
-                  .person-info-about Фолы
-                  .person-info-statusbar
-                    .person-info-statusbar-filler{:style => "width: #{person.fouls}%"}
