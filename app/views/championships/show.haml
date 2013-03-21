@@ -13,9 +13,8 @@
       %span.tabs-switcher-item.active будущие игры
       %span.tabs-switcher-item прошедшие игры
     .block
-      - if not @championship.link.empty?
-        %h3.block-subheader
-          = link_to 'ТАБЛИЦА ЧЕМПИОНАТА НА САЙТЕ ВХЛ', @championship.link
+      - if not @championship.statistic.empty?
+        = @championship.statistic.html_safe
       .results.tabs-container
         %dl.results-legend
           %dt.results-win

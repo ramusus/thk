@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Championship < ActiveRecord::Base
   default_scope :order => 'last_game_date DESC'
-  attr_accessible :name, :archive, :link
+  attr_accessible :name, :archive, :statistic
 
   has_many :games
 
@@ -19,7 +19,11 @@ class Championship < ActiveRecord::Base
       include_fields :name
     end
     edit do
-      include_fields :name, :archive, :link
+      include_fields :name, :archive
+      include_fields :statistic do
+        ckeditor true
+        ckeditor_config_js '/javascripts/ckeditor/config.js'
+      end
     end
   end
 
