@@ -8,8 +8,8 @@ class Game < ActiveRecord::Base
   belongs_to :championship
   belongs_to :team
 
-  FINISHED_OPTIONS = [['', '', 0], ['Нормальное', '', 1], ['Овертайм', 'ОТ', 2], ['Булиты', 'Б', 3], ['Не завершилась', '', 4]]
-  validates_inclusion_of :finished, :in => FINISHED_OPTIONS.collect{|pair| pair[2]}
+  FINISHED_OPTIONS = [['Нормальное', '', 1], ['Овертайм', 'ОТ', 2], ['Булиты', 'Б', 3], ['Не завершилась', '', 4]]
+#  validates_inclusion_of :finished, :in => FINISHED_OPTIONS.collect{|pair| pair[2]}
 
   def finished_enum
     FINISHED_OPTIONS

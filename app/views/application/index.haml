@@ -2,8 +2,8 @@
   .slider
     .slider-box
       %ul.slider-list
-        - @slides.each do |slide|
-          %li.slider-item.slider-item_result.current.inverted
+        - @slides.each_with_index do |slide, i|
+          %li.slider-item.slider-item_result.inverted{:class => (i == 0 ? 'current' : '')}
             %img.slider-image{:src => "/images/data/s1.jpg", :alt => ""}/
             .slider-overlay
               %a.slider-title{:href => slide.link}
@@ -24,6 +24,9 @@
             - if article.image.exists?
               = link_to image_tag(article.image, :alt => ""), article_path(article), {:class => 'article-image'}
             .article-type
+              - if article.team
+                .article-type-section
+                  %a{:href => mhk_path}= article.team
               %a{:href => "#"} Интервью
             .article-date
               .digit= l article.published_at, :format => "%d"
@@ -60,7 +63,6 @@
                   = l game.date, :format => "%d %b / %a"
                 %p= "#{game.team} : #{game.rival}"
     .sideblock.info
-      %h3.sideblock-header ИНФОРМАЦИЯ НА САЙТЕ ВХЛ
       = @info_vhl
     .sideblock
       %h3.sideblock-header Мы в соцсетях

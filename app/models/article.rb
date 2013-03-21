@@ -12,9 +12,11 @@ class Article < ActiveRecord::Base
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
-  attr_accessible :title, :subtitle, :image, :url, :main, :hide, :content, :favorite,
+  attr_accessible :title, :subtitle, :image, :url, :main, :hide, :content, :favorite, :team_id,
     :old_id, :published_at, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
     :social_image, :delete_social_image
+
+  belongs_to :team
 
   has_attached_file :image, :styles => {:square => "230x230", :thumb => "70x70"}
   has_attached_file :social_image, :styles => {:square => "200x200"}
@@ -68,7 +70,7 @@ class Article < ActiveRecord::Base
     end
     edit do
       include_fields :title
-      include_fields :favorite
+      include_fields :team, :favorite
       include_fields :subtitle do
       end
       include_fields :image do

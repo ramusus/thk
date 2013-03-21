@@ -1,6 +1,7 @@
 :javascript
   $(function() {
     $('ul.menu li a[href="#{thk_path}"]').parent().addClass('active');
+    $('ul.page-menu li a[href="'+document.location.pathname+'"]').parent().addClass('active');
   });
 .content.columns.clear
   .main.page

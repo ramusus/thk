@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321111959) do
+ActiveRecord::Schema.define(:version => 20130321125844) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130321111959) do
     t.boolean  "main"
     t.boolean  "hide"
     t.boolean  "favorite"
+    t.integer  "team_id"
     t.datetime "published_at"
     t.string   "title_seo"
     t.text     "right_column"
