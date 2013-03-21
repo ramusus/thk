@@ -47,7 +47,7 @@
                   .digit= l game.date, :format => "%d"
                   %br
                   = l game.date, :format => "%b / %a / %H:%M"
-                %p= "#{game.team_text} : #{game.rival}"
+                %p= "#{game.team} : #{game.rival}"
         .tabs-tab
           %ul.list
             - @games.past.slice(0,3).each do |game|
@@ -58,7 +58,7 @@
                   %span.digit= game.score_guest
                   %br
                   = l game.date, :format => "%d %b / %a"
-                %p= "#{game.team_text} : #{game.rival}"
+                %p= "#{game.team} : #{game.rival}"
     .sideblock.info
       %h3.sideblock-header ИНФОРМАЦИЯ НА САЙТЕ ВХЛ
       = @info_vhl

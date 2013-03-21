@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321100954) do
+ActiveRecord::Schema.define(:version => 20130321111959) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130321100954) do
     t.datetime "social_image_updated_at"
     t.boolean  "main"
     t.boolean  "hide"
+    t.boolean  "favorite"
     t.datetime "published_at"
     t.string   "title_seo"
     t.text     "right_column"
@@ -67,11 +68,11 @@ ActiveRecord::Schema.define(:version => 20130321100954) do
 
   create_table "games", :force => true do |t|
     t.string   "rival"
-    t.integer  "team"
+    t.integer  "team_id"
     t.boolean  "home"
     t.integer  "score_host"
     t.integer  "score_guest"
-    t.integer  "finished"
+    t.integer  "finished", :default => 0
     t.datetime "date"
     t.integer  "championship_id"
     t.datetime "created_at", :null => false
@@ -98,10 +99,10 @@ ActiveRecord::Schema.define(:version => 20130321100954) do
     t.integer  "height"
     t.integer  "weight"
     t.integer  "birthyear"
-    t.integer  "age"
     t.integer  "experience"
     t.string   "position"
     t.text     "description"
+    t.integer  "team_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -137,6 +138,13 @@ ActiveRecord::Schema.define(:version => 20130321100954) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.text   "people_statistic"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
   end
 
   create_table "users", :force => true do |t|

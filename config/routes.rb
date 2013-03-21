@@ -1,14 +1,14 @@
 Project::Application.routes.draw do
   resources :championships
 
-
   resources :articles
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   root :to => "application#index"
-  match 'team' => 'people#index', :as => "team"
+  match 'thk' => 'teams#thk', :as => "thk"
+  match 'mhk' => 'teams#mhk', :as => "mhk"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

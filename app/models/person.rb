@@ -2,17 +2,20 @@
 class Person < ActiveRecord::Base
 
   scope :forwards, where(:occupation => 1)
+  scope :defenders, where(:occupation => 5)
   scope :goalkeepers, where(:occupation => 2)
-  scope :coachs, where(:occupation => 3)
+  scope :coaches, where(:occupation => 3)
   scope :direction, where(:occupation => 4)
 
-  attr_accessible :age, :birthyear, :description, :efficiency, :experience, :fouls, :goals, :height, :image, :name, :number, :position, :temporary, :weight, :delete_image, :occupation
+  belongs_to :team
+
+  attr_accessible :birthyear, :description, :efficiency, :experience, :fouls, :goals, :height, :image, :name, :number, :position, :weight, :delete_image, :occupation, :team_id
 
   has_attached_file :image, :styles => {:square => "111x111"}
   attr_accessor :delete_image
   before_validation { self.image = nil if self.delete_image == '1' }
 
-  OCCUPATION_OPTIONS = [['нападающие', 1], ['вратари', 2], ['тренеры', 3], ['руководство', 4]]
+  OCCUPATION_OPTIONS = [['нападающие', 1], ['вратари', 2], ['тренеры', 3], ['руководство', 4], ['защитники', 5]]
   validates_inclusion_of :occupation, :in => OCCUPATION_OPTIONS.collect{|pair| pair[1]}
 
   def occupation_enum
@@ -25,13 +28,13 @@ class Person < ActiveRecord::Base
 
   rails_admin do
     list do
-      include_fields :name
+      include_fields :name, :team, :number
     end
     show do
       include_fields :name
     end
     edit do
-      include_fields :name, :number, :image, :age, :birthyear, :efficiency, :experience, :fouls, :goals, :height, :position, :description, :temporary, :weight
+      include_fields :name, :team, :number, :image, :birthyear, :experience, :position, :description, :weight, :height
       field :occupation, :enum do
         enum_method do
           :occupation_enum

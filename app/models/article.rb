@@ -8,14 +8,15 @@ class Article < ActiveRecord::Base
 #  scope :main, where(:main => true)
 #  scope :main_for_project, where(:main_for_project => true)
   scope :visible, where(:hide => false)
+  scope :favorites, where(:favorite => true)
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
-  attr_accessible :title, :subtitle, :image, :url, :main, :hide, :content,
+  attr_accessible :title, :subtitle, :image, :url, :main, :hide, :content, :favorite,
     :old_id, :published_at, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
     :social_image, :delete_social_image
 
-  has_attached_file :image, :styles => {:square => "230x230"}
+  has_attached_file :image, :styles => {:square => "230x230", :thumb => "70x70"}
   has_attached_file :social_image, :styles => {:square => "200x200"}
   attr_accessor :delete_image
   attr_accessor :delete_social_image
@@ -66,23 +67,17 @@ class Article < ActiveRecord::Base
       end
     end
     edit do
-      include_fields :title do
-        help 'Основной заголовок, желательно не длиннее 100 символов'
-      end
+      include_fields :title
+      include_fields :favorite
       include_fields :subtitle do
-        help 'Краткое описание под заголовком, желательно до 200 символов'
       end
       include_fields :image do
-        help 'Картинка для листинга материалов (уменьшается по ширине до размера колонки)'
       end
       include_fields :articletype do
-        help 'Тип публикации, она же метка на цветной вкладке в листинге материалов'
       end
       include_fields :url do
-        help 'Указывается только если необходим переход с анонса на внешний проект (тело материала в таком случае уже не показывается)'
       end
       include_fields :hide do
-        help 'Скрытый материал доступен всем по прямой ссылке, он скрывается только из листингов'
       end
       include_fields :published_at do
       end
