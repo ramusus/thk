@@ -16,7 +16,10 @@ class Game < ActiveRecord::Base
   end
 
   def finished_text_short
-    FINISHED_OPTIONS.select{|x| x[2] == finished}[0][1]
+    option = FINISHED_OPTIONS.select{|x| x[2] == finished}[0]
+    if option
+      option[1]
+    end
   end
 
   def finished?

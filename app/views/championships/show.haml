@@ -2,31 +2,37 @@
   $(function() {
     $('ul.menu li a[href$="#{championships_path}"]').parent().addClass('active');
   });
-.content.columns.clear.tabs
+.content.columns.clear
   .main.page
     %h1 Матчи
     %ul.page-menu
       - @championships.each do |championship|
         %li{:class => (championship.id == @championship.id ? 'active' : '')}
           = link_to championship.name, championship
-    %p.page-submenu.tabs-switcher
-      %span.tabs-switcher-item.active будущие игры
-      %span.tabs-switcher-item прошедшие игры
-    .block
-      - if not @championship.statistic.empty?
-        = @championship.statistic.html_safe
-      .results.tabs-container
-        %dl.results-legend
-          %dt.results-win
-          %dd Победа
-          %dt.results-loss
-          %dd Проигрыш
-        .tabs-tab.active
-          %table.results-table
-            = render :partial => 'game', :collection => @games.future
-        .tabs-tab
-          %table.results-table
-            = render :partial => 'game', :collection => @games.past
+    .tabs
+      - if @games.future.count > 0 and @games.past.count > 0
+        %p.page-submenu.tabs-switcher
+          %span.tabs-switcher-item.active будущие игры
+          %span.tabs-switcher-item прошедшие игры
+      .block
+        - if not @championship.statistic.empty?
+          = @championship.statistic.html_safe
+        .results.tabs-container
+          %dl.results-legend
+            %dt.results-win
+            %dd Победа
+            %dt.results-loss
+            %dd Проигрыш
+          - if @games.future.count > 0
+            .tabs-tab
+              %table.results-table
+                = render :partial => 'game', :collection => @games.future
+          - if @games.past.count > 0
+            .tabs-tab
+              %table.results-table
+                = render :partial => 'game', :collection => @games.past
+          :javascript
+            $('.tabs-tab:first').addClass('active');
   = render "right_column"
 -#
         .filter
