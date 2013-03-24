@@ -5,6 +5,7 @@ Project::Application.routes.draw do
   resources :articles
   devise_for :users
 
+  mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   root :to => "application#index"
