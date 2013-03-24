@@ -1,0 +1,12 @@
+%li.article-item
+  - if article.image.exists?
+    = link_to image_tag(article.image(:square), :alt => article.title), article_path(article), {:class => 'article-image'}
+  .article-type
+    - if article.mhl
+      .article-type-section
+        %a{:href => articles_mhl_path} МХЛ
+    %a{:href => article.type.slug}= article.type
+  .article-date
+    .digit= l article.published_at, :format => "%d"
+    = l article.published_at, :format => "%b / %a"
+  = link_to article.title, article_path(article), {:class => 'article-title'}

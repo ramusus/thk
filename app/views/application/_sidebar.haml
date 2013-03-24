@@ -3,5 +3,5 @@
     %a{:href => article_path(article)}
       - if article.image.exists?
         %img.sidelist-image{:src => article.image(:thumb), :alt => article.title}/
-      %span.sidelist-title= article.title
-      %span.sidelist-desc= article.subtitle
+      %span.sidelist-title= article.type
+      %span.sidelist-desc= article.title

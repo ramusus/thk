@@ -1,6 +1,7 @@
 :javascript
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
+    $('ul.page-menu li a[href="'+document.location.pathname+'"]').parent().addClass('active');
   });
 .content.columns.clear
   .main.page
@@ -9,14 +10,5 @@
     .articles
       .block
         %ul.article-list.clear
-          - @articles.each do |article|
-            %li.article-item
-              - if article.image.exists?
-                = link_to image_tag(article.image(:square), :alt => article.title), article_path(article), {:class => 'article-image'}
-              .article-type
-                %a{:href => "#"} Интервью
-              .article-date
-                .digit= l article.published_at, :format => "%d"
-                = l article.published_at, :format => "%b / %a"
-              = link_to article.title, article_path(article), {:class => 'article-title'}
+          = render :partial => 'article', :collection => @articles
   = render "right_column"

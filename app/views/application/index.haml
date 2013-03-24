@@ -19,22 +19,7 @@
   .main.page
     .block
       %ul.article-list.clear
-        - @articles.each do |article|
-          %li.article-item
-            - if article.image.exists?
-              = link_to image_tag(article.image(:square), :alt => ""), article_path(article), {:class => 'article-image'}
-            .article-type
-              - if article.team
-                .article-type-section
-                  %a{:href => mhk_path}= article.team
-              %a{:href => "#"} Интервью
-            .article-date
-              .digit= l article.published_at, :format => "%d"
-              = l article.published_at, :format => "%b / %a"
-            = link_to article.title, article_path(article), {:class => 'article-title'}
-    .loadmore
-      Загрузить еще материалов ...
-
+        = render :partial => 'article', :collection => @articles
   .sidebar
     .sideblock.tabs
       %h3.sideblock-header МАТЧИ
@@ -67,3 +52,7 @@
     .sideblock
       %h3.sideblock-header Мы в соцсетях
       = @social_links
+
+-#
+    .loadmore
+      Загрузить еще материалов ...

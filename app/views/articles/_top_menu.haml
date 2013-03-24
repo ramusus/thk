@@ -1,11 +1,6 @@
 %ul.page-menu
+  - @articletypes.each do |type|
+    %li
+      %a{:href => articletype_path(type)}= type
   %li
-    %a{:href => "#"} Новости
-  %li
-    %a{:href => "#"} Интервью
-  %li
-    %a{:href => "#"} Отчет
-  %li
-    %a{:href => "#"} Репортаж
-  %li
-    %a{:href => "#"} МХЛ
+    %a{:href => articles_mhl_path} МХЛ

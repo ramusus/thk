@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 class Article < ActiveRecord::Base
 
-  scope :not_announces, where("articletype_id != ?", Articletype::PUBLICATION_ID)
-
-  scope :announces, where(:articletype_id => Articletype::PUBLICATION_ID)
+  scope :news, where(:articletype_id => Articletype::NEWS_ID)
+  scope :interviews, where(:articletype_id => Articletype::INTERVIEW_ID)
+  scope :reports, where(:articletype_id => Articletype::REPORT_ID)
+  scope :reviews, where(:articletype_id => Articletype::REVIEW_ID)
 
 #  scope :main, where(:main => true)
 #  scope :main_for_project, where(:main_for_project => true)
@@ -12,11 +13,11 @@ class Article < ActiveRecord::Base
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
-  attr_accessible :title, :subtitle, :image, :url, :main, :hide, :content, :favorite, :team_id,
+  attr_accessible :title, :subtitle, :authors, :image, :url, :main, :hide, :content, :favorite, :mhl,
     :old_id, :published_at, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
     :social_image, :delete_social_image
 
-  belongs_to :team
+#  belongs_to :team
 
   has_attached_file :image, :styles => {:square => "230x230", :thumb => "70x70"}
   has_attached_file :social_image, :styles => {:square => "200x200"}
@@ -70,9 +71,8 @@ class Article < ActiveRecord::Base
     end
     edit do
       include_fields :title
-      include_fields :team, :favorite
-      include_fields :subtitle do
-      end
+      include_fields :mhl, :favorite
+      include_fields :subtitle
       include_fields :image do
       end
       include_fields :articletype do
@@ -91,7 +91,7 @@ class Article < ActiveRecord::Base
 #      include_fields :social_image do
 #        help 'Картинка проекта используемая в социальных сетях (уменьшается до размера 89 на 89 пикс)'
 #      end
-      include_fields :content, :right_column do
+      include_fields :content, :authors do
         ckeditor true
         ckeditor_config_js '/javascripts/ckeditor/config.js'
       end
