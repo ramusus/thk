@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324120020) do
+ActiveRecord::Schema.define(:version => 20130324175907) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "subtitle"
-    t.text     "authors"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -28,8 +27,6 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
     t.datetime "social_image_updated_at"
     t.boolean  "main"
     t.boolean  "hide"
-    t.boolean  "favorite"
-    t.boolean  "mhl"
     t.datetime "published_at"
     t.string   "title_seo"
     t.text     "right_column"
@@ -38,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
     t.integer  "articletype_id"
     t.text     "content"
     t.string   "url",                       :default => ""
+    t.boolean  "favorite"
+    t.text     "authors"
+    t.boolean  "mhl"
   end
 
   create_table "articletypes", :force => true do |t|
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
   create_table "championships", :force => true do |t|
     t.string   "name"
     t.boolean  "archive"
-    t.text     "statistic"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.datetime "last_game_date"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.text     "statistic"
   end
 
   create_table "chunks", :force => true do |t|
@@ -68,17 +68,33 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
     t.datetime "updated_at",                   :null => false
   end
 
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
   create_table "games", :force => true do |t|
+    t.datetime "date"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "championship_id"
     t.string   "rival"
-    t.integer  "team_id"
     t.boolean  "home"
     t.integer  "score_host"
     t.integer  "score_guest"
-    t.integer  "finished", :default => 0
-    t.datetime "date"
-    t.integer  "championship_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "finished",        :default => 0
+    t.integer  "team_id"
   end
 
   create_table "pages", :force => true do |t|
@@ -104,15 +120,15 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
     t.integer  "experience"
     t.string   "position"
     t.text     "description"
-    t.string   "notice", :default => ''
-    t.integer  "team_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "occupation"
+    t.integer  "team_id"
+    t.string   "notice",             :default => ""
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -135,8 +151,8 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
     t.text     "content"
     t.string   "link"
     t.boolean  "hide"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -145,9 +161,9 @@ ActiveRecord::Schema.define(:version => 20130324120020) do
 
   create_table "teams", :force => true do |t|
     t.string   "name"
-    t.text   "people_statistic"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.text     "people_statistic"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|
