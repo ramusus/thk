@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324175907) do
+ActiveRecord::Schema.define(:version => 20130326104431) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130324175907) do
     t.text     "content"
     t.string   "url",                       :default => ""
     t.boolean  "favorite"
+    t.integer  "position", :default => 0
     t.text     "authors"
     t.boolean  "mhl"
   end

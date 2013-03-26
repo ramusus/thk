@@ -17,7 +17,35 @@ ru:
       static_file: "Файл"
       lecture_subscriber: "Лекции. Подписчик"
       championship: "Чемпионат"
+      game: "Игра"
+      person: "Персона"
+      team: "Команда"
     attributes:
+      game:
+        date: "Дата"
+        championship: "Чемпионат"
+        team: "Команда"
+        rival: "Соперник"
+        home: "Дома?"
+        score_host: "Счет хозяина"
+        score_guest: "Счет гостя"
+        finished: "Окончание"
+      team:
+        name: "Название"
+        people_statistic: "Статистика игроков"
+      person:
+        name: "Имя"
+        team: "Команда"
+        number: "Номер"
+        image: "Картинка"
+        birthyear: "Год рождения"
+        experience: "Опыт"
+        position: "Должность"
+        description: "Описание"
+        notice: "Примечание вверху"
+        weight: "Вес"
+        height: "Рост"
+        occupation: "Тип"
       page:
         title: "Заголовок"
         slug: "Адрес"
@@ -34,7 +62,7 @@ ru:
       championship:
         name: "Название"
         archive: "В архиве"
-        link: "Ссылка на таблицу"
+        statistic: "Ссылка на таблицу"
       static_file:
         alt: "Alt"
         code: "Код"
@@ -54,6 +82,10 @@ ru:
       article:
         title: "Заголовок"
         subtitle: "Подзаголовок"
+        mhl: "МХЛ"
+        favorite: "Блок Избранное"
+        position: "Порядок в Избранном"
+        authors: "Авторы"
         image: "Картинка в анонсе"
         social_image: "Картинка в соц. сетях"
         url: "Внешняя ссылка"

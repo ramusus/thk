@@ -1,6 +1,25 @@
 :javascript
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
+
+    var gallery = '';
+    $('var').parent().each(function(i, image_container) {
+      gallery += sprintf('<li class="slider-item"><img src="%s" alt="" /><div class="article-slider-desc">%s</div></li>',
+        $('img', image_container).attr('src'),
+        $('img', image_container).attr('alt'));
+    });
+
+    gallery = sprintf('<div class="article-slider"><div class="slider"><div class="slider-box"><ul class="slider-list">%s</ul><div class="slider-nav"> \
+      <b class="slider-nav-prev">«</b> \
+      <span class="slider-nav-num">1</span>/<span class="slider-nav-of"></span> \
+      <b class="slider-nav-next">»</b> \
+      </div></div></div></div>', gallery);
+
+    $('var:first').parent().before(gallery);
+    $('var').parent().remove();
+    $('.slider-item:first').addClass('current');
+    $('.slider-list').css({height: undefined});
+    init_sliders();
   });
 .content.columns.clear
   .main.page
@@ -40,23 +59,3 @@
 -#
       .article-social
         %img{:src => "/images/data/social.png", :alt => ""}
-      .article-slider
-        .slider
-          .slider-box
-            .slider-list
-              %li.slider-item.current
-                %img{:src => "/images/data/art1.jpg", :alt => ""}
-                .article-slider-desc Вечеслав Семенов, нападающий ТХК
-              %li.slider-item
-                %img{:src => "/images/data/art1.jpg", :alt => ""}
-                .article-slider-desc Вечеслав Семенов, ТХК
-              %li.slider-item
-                %img{:src => "/images/data/art1.jpg", :alt => ""}
-                .article-slider-desc Вечеслав Семенов, нападающий ТХК
-              %li.slider-item
-                %img{:src => "/images/data/art1.jpg", :alt => ""}
-                .article-slider-desc Вечеслав Семенов, нападающий ТХК
-          .slider-nav
-            %b.slider-nav-prev «
-            <span class="slider-nav-num">1</span>/<span class="slider-nav-of"></span>
-            %b.slider-nav-next »

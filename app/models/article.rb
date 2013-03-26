@@ -15,7 +15,7 @@ class Article < ActiveRecord::Base
   default_scope :order => 'published_at DESC, id DESC'
   attr_accessible :title, :subtitle, :authors, :image, :url, :main, :hide, :content, :favorite, :mhl,
     :old_id, :published_at, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
-    :social_image, :delete_social_image
+    :social_image, :delete_social_image, :position
 
 #  belongs_to :team
 
@@ -71,8 +71,8 @@ class Article < ActiveRecord::Base
     end
     edit do
       include_fields :title
-      include_fields :mhl, :favorite
-      include_fields :subtitle
+      include_fields :subtitle, :mhl
+      include_fields :favorite, :position
       include_fields :image do
       end
       include_fields :articletype do
