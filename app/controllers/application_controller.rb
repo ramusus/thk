@@ -11,7 +11,7 @@
   def set_context
 
     @articletypes = Articletype.where(:filter_hide => false)
-    @favorites = Article.favorites.order('position DESC')
+    @favorites = Article.unscoped.where(:favorite => true).order('position DESC')
 
     ['partners','social_links','copyright','header_menu','footer_menu','info_vhl'].each do |var_name|
       chunk = Chunk.find_by_code(var_name)

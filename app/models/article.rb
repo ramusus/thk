@@ -9,7 +9,6 @@ class Article < ActiveRecord::Base
 #  scope :main, where(:main => true)
 #  scope :main_for_project, where(:main_for_project => true)
   scope :visible, where(:hide => false)
-  scope :favorites, where(:favorite => true)
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
@@ -59,10 +58,10 @@ class Article < ActiveRecord::Base
 
   rails_admin do
     list do
-      include_fields :published_at, :title, :articletype, :main, :hide
+      include_fields :published_at, :title, :articletype, :position, :hide
     end
     show do
-      include_fields :title, :published_at, :subtitle, :main
+      include_fields :title, :published_at, :subtitle, :position
       include_fields :content do
         pretty_value do
           value.html_safe
