@@ -1,10 +1,11 @@
 :javascript
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
+    $('ul.page-menu li a[href$="#{@article.type.slug}"]').parent().addClass('active');
 
     var gallery = '';
-    $('var').parent().each(function(i, image_container) {
-      gallery += sprintf('<li class="slider-item"><img src="%s" alt="" /><div class="article-slider-desc">%s</div></li>',
+    $('p.gallery').each(function(i, image_container) {
+      gallery += sprintf('<li class="slider-item"><img src="%s" alt="" height="393" /><div class="article-slider-desc">%s</div></li>',
         $('img', image_container).attr('src'),
         $('img', image_container).attr('alt'));
     });
@@ -15,8 +16,8 @@
       <b class="slider-nav-next">»</b> \
       </div></div></div></div>', gallery);
 
-    $('var:first').parent().before(gallery);
-    $('var').parent().remove();
+    $('p.gallery:first').before(gallery);
+    $('p.gallery').remove();
     $('.slider-item:first').addClass('current');
     $('.slider-list').css({height: undefined});
     init_sliders();

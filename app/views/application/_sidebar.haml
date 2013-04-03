@@ -1,5 +1,5 @@
 - @favorites.each_with_index do |article, i|
-  %li.sidelist-item{:class => i == 0 ? 'sidelist-item_featured' : ''}
+  %li.sidelist-item{:class => article.main ? 'sidelist-item_featured' : ''}
     %a{:href => article_path(article)}
       - if article.image.exists?
         %img.sidelist-image{:src => article.image(:thumb), :alt => article.title}/

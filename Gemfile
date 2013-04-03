@@ -5,7 +5,7 @@ gem 'russian', '~> 0.6.0'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'auto_migrations', :git => 'git://github.com/antage/auto_migrations.git'
 gem 'devise' # rails_admin dependency
-gem "ckeditor", "3.7.3"
+gem "ckeditor"
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-meta'
 gem 'yaml_db', :git => 'git://github.com/lostapathy/yaml_db.git'

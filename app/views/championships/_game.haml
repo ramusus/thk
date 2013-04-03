@@ -14,6 +14,6 @@
       - else
         %span Не завершилась
   %td.teams
-    = "#{game.team} : #{game.rival}"
+    = game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
   %td{:align => "center"}
     = game.home ? "дома" : "на<br/>выезде".html_safe

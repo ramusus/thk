@@ -71,7 +71,7 @@ class Article < ActiveRecord::Base
     edit do
       include_fields :title
       include_fields :subtitle, :mhl
-      include_fields :favorite, :position
+      include_fields :favorite, :main, :position
       include_fields :image do
       end
       include_fields :articletype do
@@ -92,7 +92,6 @@ class Article < ActiveRecord::Base
 #      end
       include_fields :content, :authors do
         ckeditor true
-        ckeditor_config_js '/javascripts/ckeditor/config.js'
       end
     end
   end

@@ -20,10 +20,10 @@ class Articletype < ActiveRecord::Base
 
   rails_admin do
     list do
-      include_fields :name
+      include_fields :name, :slug
     end
     show do
-      include_fields :name
+      include_fields :name, :slug
     end
     edit do
       include_fields :name, :slug

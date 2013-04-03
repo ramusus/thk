@@ -2,6 +2,7 @@
 class ArticlesController < ApplicationController
 
   def articles_by_type
+    puts 1
     type = Articletype.find_by_slug(params[:slug])
     @articles = Article.scoped_by_articletype_id(type)
     render "index"
