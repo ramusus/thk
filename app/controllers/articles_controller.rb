@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.published.find(params[:id]) || not_found
-    @articles = Article.visible.where("articletype_id = ? AND id != ?", @article.articletype_id, @article.id).limit(3)
+    @articles = Article.published.where("articletype_id = ? AND id != ?", @article.articletype_id, @article.id).limit(3)
     render "show"
   end
 

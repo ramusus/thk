@@ -21,15 +21,15 @@
       %li
         %a{:href => "/contacts/"} КОНТАКТЫ
     %ul.page-submenu
-      - if @people.forwards.count > 0
-        %li
-          %a{:href => "#forwards"} нападающие
-      - if @people.defenders.count > 0
-        %li
-          %a{:href => "#defenders"} защитники
       - if @people.goalkeepers.count > 0
         %li
           %a{:href => "#goalkeepers"} вратари
+      - if @people.defenders.count > 0
+        %li
+          %a{:href => "#defenders"} защитники
+      - if @people.forwards.count > 0
+        %li
+          %a{:href => "#forwards"} нападающие
       - if @people.coaches.count > 0
         %li
           %a{:href => "#coaches"} тренеры

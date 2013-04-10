@@ -160,7 +160,7 @@ ru:
         position: "Позиция"
         top_text: "Текст вверху"
         image: "Картинка"
-        inverted: "Черный блок"
+        inverted: "Белый фон"
       articletype:
         name: "Название в фильтре"
         name_plural: "Название в мн. числе"
