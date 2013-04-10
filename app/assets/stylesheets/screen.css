@@ -1099,19 +1099,21 @@ h1 {
   .article-item:nth-child(2n+1) {
     clear: left; }
 
-/* line 713, screen.scss */
-.articles .article-item:nth-child(2n+1) {
+/* line 714, screen.scss */
+.articles .article-item:nth-child(2n+1),
+.article-related .article-item:nth-child(2n+1) {
   clear: none; }
-/* line 716, screen.scss */
-.articles .article-item:nth-child(3n+1) {
+/* line 717, screen.scss */
+.articles .article-item:nth-child(3n+1),
+.article-related .article-item:nth-child(3n+1) {
   clear: left; }
 
-/* line 720, screen.scss */
+/* line 721, screen.scss */
 .article-image {
   display: block;
   margin-bottom: 6px; }
 
-/* line 724, screen.scss */
+/* line 725, screen.scss */
 .article-type {
   position: relative;
   width: 190px;
@@ -1119,14 +1121,14 @@ h1 {
   height: 32px;
   margin-bottom: 6px;
   font: 22px/35px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif; }
-  /* line 731, screen.scss */
+  /* line 732, screen.scss */
   .article-type a {
     color: #fff;
     margin: 0 9px; }
-    /* line 734, screen.scss */
+    /* line 735, screen.scss */
     .article-type a:hover {
       color: #eee; }
-  /* line 738, screen.scss */
+  /* line 739, screen.scss */
   .article-type:after {
     position: absolute;
     top: 0;
@@ -1139,14 +1141,14 @@ h1 {
     border-width: 0 0 32px 10px;
     border-color: #00316d transparent transparent #00316d; }
 
-/* line 751, screen.scss */
+/* line 752, screen.scss */
 .article-type-section {
   float: left;
   position: relative;
   height: 32px;
   margin-right: 10px;
   background: #1c75bb; }
-  /* line 757, screen.scss */
+  /* line 758, screen.scss */
   .article-type-section:after {
     position: absolute;
     top: 0;
@@ -1159,13 +1161,13 @@ h1 {
     border-width: 0 0 32px 10px;
     border-color: #1c75bb transparent transparent #1c75bb; }
 
-/* line 770, screen.scss */
+/* line 771, screen.scss */
 .article-date {
   float: left;
   font: 13px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   margin-left: -1px;
   letter-spacing: -0.5px; }
-  /* line 775, screen.scss */
+  /* line 776, screen.scss */
   .article-date .digit {
     display: block;
     height: 43px;
@@ -1173,7 +1175,7 @@ h1 {
     font-size: 35px;
     width: 35px; }
 
-/* line 783, screen.scss */
+/* line 784, screen.scss */
 .article-title {
   display: block;
   margin-left: 45px;
@@ -1183,7 +1185,7 @@ h1 {
   max-height: 80px;
   overflow: hidden; }
 
-/* line 793, screen.scss */
+/* line 794, screen.scss */
 .loadmore {
   padding-top: 35px;
   background: url(../images/icon_loadmore.png) no-repeat 50% 0;
@@ -1191,24 +1193,24 @@ h1 {
   color: #58595b;
   cursor: pointer;
   text-align: center; }
-  /* line 800, screen.scss */
+  /* line 801, screen.scss */
   .loadmore:hover {
     color: #1c75bb; }
 
-/* line 805, screen.scss */
+/* line 806, screen.scss */
 .splash {
   height: 370px;
   margin: 0 -33px 38px; }
 
-/* line 809, screen.scss */
+/* line 810, screen.scss */
 .slider {
   position: relative; }
 
-/* line 812, screen.scss */
+/* line 813, screen.scss */
 .slider-box {
   overflow: hidden; }
 
-/* line 815, screen.scss */
+/* line 816, screen.scss */
 .slider-list {
   position: relative;
   width: 100%;
@@ -1217,7 +1219,7 @@ h1 {
   margin: 0;
   list-style: none; }
 
-/* line 823, screen.scss */
+/* line 824, screen.scss */
 .slider-item {
   display: none;
   position: absolute;
@@ -1226,13 +1228,13 @@ h1 {
   width: 100%;
   height: 370px; }
 
-/* line 831, screen.scss */
+/* line 832, screen.scss */
 .slider-image {
   position: absolute;
   right: 0;
   display: block; }
 
-/* line 836, screen.scss */
+/* line 837, screen.scss */
 .slider-overlay {
   position: absolute;
   padding: 0 33px;
@@ -1245,30 +1247,30 @@ h1 {
   background: -o-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
   background: linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%); }
 
-/* line 844, screen.scss */
+/* line 845, screen.scss */
 .slider-title {
   font: 79px/77px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   text-transform: uppercase;
   color: #fff; }
-  /* line 848, screen.scss */
+  /* line 849, screen.scss */
   .slider-title .score {
     margin-top: 10px;
     display: block; }
-  /* line 852, screen.scss */
+  /* line 853, screen.scss */
   .slider-title .digit {
     height: 94px;
     line-height: 94px;
     font-size: 79px;
     width: 80px; }
 
-/* line 860, screen.scss */
+/* line 861, screen.scss */
 .slider-item_result .slider-title {
   position: relative;
   display: block;
   width: 400px;
   text-align: center; }
 
-/* line 867, screen.scss */
+/* line 868, screen.scss */
 .slider-title-type {
   position: absolute;
   top: 9px;
@@ -1279,7 +1281,7 @@ h1 {
   margin-bottom: 6px;
   font: 22px/35px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   color: #fff; }
-  /* line 877, screen.scss */
+  /* line 878, screen.scss */
   .slider-title-type:after {
     position: absolute;
     top: 0;
@@ -1292,29 +1294,29 @@ h1 {
     border-width: 0 0 32px 10px;
     border-color: #1c75bb transparent transparent #1c75bb; }
 
-/* line 890, screen.scss */
+/* line 891, screen.scss */
 .slider-title-teams {
   font-size: 35px; }
 
-/* line 894, screen.scss */
+/* line 895, screen.scss */
 .inverted .slider-overlay {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(80%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
   background: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
   background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
   background: -o-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
   background: linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%); }
-/* line 897, screen.scss */
+/* line 898, screen.scss */
 .inverted .slider-title {
   color: #000; }
 
-/* line 901, screen.scss */
+/* line 902, screen.scss */
 .slider-nav {
   position: absolute;
   bottom: 30px;
   left: 33px;
   font: 23px/36px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   color: #fff; }
-  /* line 907, screen.scss */
+  /* line 908, screen.scss */
   .slider-nav b {
     display: inline-block;
     width: 12px;
@@ -1322,44 +1324,45 @@ h1 {
     background: url(../images/nav.png) no-repeat;
     text-indent: -1000em;
     cursor: pointer; }
-    /* line 913, screen.scss */
+    /* line 914, screen.scss */
     .slider-nav b:hover {
       opacity: 0.9; }
-  /* line 918, screen.scss */
+  /* line 919, screen.scss */
   .slider-nav .slider-nav-next {
     background-position: -12px 0; }
-  /* line 921, screen.scss */
+  /* line 922, screen.scss */
   .slider-nav.inverted {
     color: #000; }
-    /* line 923, screen.scss */
+    /* line 924, screen.scss */
     .slider-nav.inverted .slider-nav-prev {
       background-position: 0 -36px; }
-    /* line 924, screen.scss */
+    /* line 925, screen.scss */
     .slider-nav.inverted .slider-nav-next {
       background-position: -12px -36px; }
 
-/* line 928, screen.scss */
+/* line 929, screen.scss */
 .article-slider .slider-nav {
   color: #000; }
-  /* line 930, screen.scss */
+  /* line 931, screen.scss */
   .article-slider .slider-nav .slider-nav-prev {
     background-position: 0 -36px; }
-  /* line 931, screen.scss */
+  /* line 932, screen.scss */
   .article-slider .slider-nav .slider-nav-next {
     background-position: -12px -36px; }
 
-/* line 935, screen.scss */
+/* line 936, screen.scss */
 .article {
   margin: 50px 0 30px;
   font-size: 15px;
   line-height: 18px; }
-  /* line 939, screen.scss */
+  /* line 940, screen.scss */
   .article .article-date {
     text-align: center;
     width: 35px;
+    margin: 0 0 10px 20px;
     float: right;
     white-space: nowrap; }
-  /* line 945, screen.scss */
+  /* line 947, screen.scss */
   .article blockquote {
     margin: 0.5em 100px 0.5em 110px;
     padding: 0.5em 0;
@@ -1368,57 +1371,57 @@ h1 {
     font-size: 37px;
     line-height: 40px;
     color: #333; }
-    /* line 953, screen.scss */
+    /* line 955, screen.scss */
     .article blockquote p {
       margin: 0; }
 
-/* line 958, screen.scss */
+/* line 960, screen.scss */
 .article-lead {
   font-size: 19px;
   line-height: 21px; }
-  /* line 961, screen.scss */
+  /* line 963, screen.scss */
   .article-lead p {
     margin-bottom: 0.5em; }
 
-/* line 967, screen.scss */
+/* line 969, screen.scss */
 .article-by p {
   margin: 0; }
 
-/* line 971, screen.scss */
+/* line 973, screen.scss */
 .article-social {
   margin: 1em 0; }
 
-/* line 975, screen.scss */
+/* line 977, screen.scss */
 .tabs-switcher {
   font: 17px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
   text-align: center;
   cursor: pointer; }
-  /* line 979, screen.scss */
+  /* line 981, screen.scss */
   .tabs-switcher .active {
     font-style: italic;
     color: #1c75bb;
     cursor: default; }
 
-/* line 985, screen.scss */
+/* line 987, screen.scss */
 .tabs-switcher-item {
   margin: 0 5px; }
 
-/* line 988, screen.scss */
+/* line 990, screen.scss */
 .tabs-switcher-item:hover {
   color: #1c75bb; }
 
-/* line 991, screen.scss */
+/* line 993, screen.scss */
 h2 .tabs-switcher {
   margin-left: 1.5em; }
 
-/* line 994, screen.scss */
+/* line 996, screen.scss */
 .tabs-tab {
   display: none; }
-  /* line 996, screen.scss */
+  /* line 998, screen.scss */
   .tabs-tab.active {
     display: block; }
 
-/* line 1000, screen.scss */
+/* line 1002, screen.scss */
 .info-links {
   font: 14px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
   text-transform: uppercase;
@@ -1426,7 +1429,7 @@ h2 .tabs-switcher {
   padding: 0;
   margin-bottom: 30px;
   text-align: center; }
-  /* line 1007, screen.scss */
+  /* line 1009, screen.scss */
   .info-links li:after {
     content: '';
     display: block;
@@ -1434,26 +1437,26 @@ h2 .tabs-switcher {
     padding-bottom: 5px;
     width: 27px;
     border-bottom: 1px solid #858482; }
-  /* line 1015, screen.scss */
+  /* line 1017, screen.scss */
   .info-links li:last-child:after {
     content: normal; }
 
-/* line 1020, screen.scss */
+/* line 1022, screen.scss */
 .list {
   list-style: none;
   padding: 0;
   margin: 0 0 30px; }
-  /* line 1024, screen.scss */
+  /* line 1026, screen.scss */
   .list li {
     margin-bottom: 15px; }
-  /* line 1028, screen.scss */
+  /* line 1030, screen.scss */
   .list .score,
   .list .article-date {
     float: none;
     text-align: center;
     font: 13px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
     letter-spacing: -0.5px; }
-    /* line 1032, screen.scss */
+    /* line 1034, screen.scss */
     .list .score .digit,
     .list .article-date .digit {
       display: inline-block;
@@ -1461,28 +1464,33 @@ h2 .tabs-switcher {
       line-height: 45px;
       font-size: 35px;
       width: 35px; }
-  /* line 1041, screen.scss */
+  /* line 1043, screen.scss */
   .list .score-delim {
     font-size: 35px; }
-  /* line 1044, screen.scss */
+  /* line 1046, screen.scss */
   .list p {
     font: 20px/22px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
     margin: 0;
     text-align: center; }
 
-/* line 1051, screen.scss */
+/* line 1053, screen.scss */
 .article-slider .slider-item {
-  height: auto; }
+  height: auto;
+  text-align: center; }
 
-/* line 1056, screen.scss */
+/* line 1057, screen.scss */
+.slider-item-image {
+  background: #ececec; }
+
+/* line 1062, screen.scss */
 .article-slider .slider-nav {
   left: 0;
   bottom: 0; }
-/* line 1060, screen.scss */
+/* line 1066, screen.scss */
 .article-slider .slider-list {
   height: 440px; }
 
-/* line 1064, screen.scss */
+/* line 1070, screen.scss */
 .article-slider-desc {
   margin-top: 18px;
   margin-left: 75px;

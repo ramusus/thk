@@ -5,7 +5,12 @@
 
     var gallery = '';
     $('p.gallery').each(function(i, image_container) {
-      gallery += sprintf('<li class="slider-item"><img src="%s" alt="" height="393" /><div class="article-slider-desc">%s</div></li>',
+      gallery += sprintf('<li class="slider-item"> \
+          <div class="slider-item-image"> \
+            <img src="%s" alt="" height="393" /> \
+          </div> \
+          <div class="article-slider-desc">%s</div> \
+        </li>',
         $('img', image_container).attr('src'),
         $('img', image_container).attr('alt'));
     });

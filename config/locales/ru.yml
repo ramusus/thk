@@ -159,7 +159,8 @@ ru:
         link: "Ссылка"
         position: "Позиция"
         top_text: "Текст вверху"
-        background_image: "Фоновая картинка"
+        image: "Картинка"
+        inverted: "Черный блок"
       articletype:
         name: "Название в фильтре"
         name_plural: "Название в мн. числе"

@@ -3,8 +3,11 @@
     .slider-box
       %ul.slider-list
         - @slides.each_with_index do |slide, i|
-          %li.slider-item.slider-item_result.inverted{:class => (i == 0 ? 'current' : '')}
-            %img.slider-image{:src => "/images/data/s1.jpg", :alt => ""}/
+          - classes = [i == 0 ? 'current' : '', slide.inverted ? 'inverted': '']
+          %li.slider-item.slider-item_result{:class => classes.join(' ')}
+            - if slide.image.exists?
+              %a{:href => slide.link}
+                %img.slider-image{:src => slide.image(:slide), :alt => ""}/
             .slider-overlay
               %a.slider-title{:href => slide.link}
                 = slide.content.html_safe
@@ -29,7 +32,7 @@
       .tabs-container
         .tabs-tab.active
           %ul.list
-            - @games.future.slice(0,3).each do |game|
+            - @games.future.order('date ASC').slice(0,3).each do |game|
               %li
                 .article-date
                   .digit= l game.date, :format => "%d"
@@ -38,7 +41,7 @@
                 %p= "#{game.team} : #{game.rival}"
         .tabs-tab
           %ul.list
-            - @games.past.slice(0,3).each do |game|
+            - @games.past.order('date DESC').slice(0,3).each do |game|
               %li
                 .score
                   %span.digit= game.score_host

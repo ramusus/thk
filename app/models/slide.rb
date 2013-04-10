@@ -1,7 +1,7 @@
 class Slide < ActiveRecord::Base
   scope :visible, where(:hide => false)
   default_scope :order => 'position DESC'
-  attr_accessible :hide, :content, :color, :background_color, :link, :position, :image
+  attr_accessible :hide, :content, :color, :background_color, :link, :position, :image, :inverted
 
   has_attached_file :image, :styles => {:slide => "804x370"}
 
@@ -20,7 +20,7 @@ class Slide < ActiveRecord::Base
       include_fields :content
     end
     edit do
-      include_fields :hide, :content, :link, :position, :image
+      include_fields :hide, :content, :link, :position, :image, :inverted
     end
   end
 
