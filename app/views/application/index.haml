@@ -1,3 +1,14 @@
+= content_for(:title) do
+  Тверской Хоккейный Клуб
+
+:javascript
+  $(function() {
+    // no future games
+    if($('.tabs-container ul:first li').length == 0) {
+      $('.tabs-switcher-item:last').click();
+      $('.tabs-container ul:first').replaceWith('<p>Информации о предстоящих матчах на данный момент нет</p>');
+    }
+  });
 .splash
   .slider
     .slider-box

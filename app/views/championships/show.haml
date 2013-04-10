@@ -1,3 +1,6 @@
+= content_for(:title) do
+  Матчи: ТХК - #{@championship.name}
+
 :javascript
   $(function() {
     $('ul.menu li a[href$="#{championships_path}"]').parent().addClass('active');

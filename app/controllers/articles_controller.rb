@@ -2,19 +2,20 @@
 class ArticlesController < ApplicationController
 
   def articles_by_type
-    puts 1
-    type = Articletype.find_by_slug(params[:slug])
-    @articles = Article.scoped_by_articletype_id(type)
+    @type = Articletype.find_by_slug(params[:slug])
+    @articles = Article.published.scoped_by_articletype_id(@type)
+    @title = @type.name
     render "index"
   end
 
   def articles_mhl
-    @articles = Article.where("mhl = True")
+    @articles = Article.published.where("mhl = True")
+    @title = "МХЛ"
     render "index"
   end
 
   def show
-    @article = Article.find(params[:id]) || not_found
+    @article = Article.published.find(params[:id]) || not_found
     @articles = Article.visible.where("articletype_id = ? AND id != ?", @article.articletype_id, @article.id).limit(3)
     render "show"
   end
@@ -24,7 +25,7 @@ class ArticlesController < ApplicationController
 #    params[:page] = params.fetch(:page, 1).to_i
 #    params[:per_page] = params.fetch(:per_page, 20).to_i
 
-    articles = Article.visible
+    articles = Article.published
     if not params[:type_ids].blank?
       type_ids = params[:type_ids]
       articles = articles.scoped_by_articletype_id(type_ids)

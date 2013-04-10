@@ -1,3 +1,6 @@
+= content_for(:title) do
+  ТХК - #{@title ? @title : "Публикации"}
+
 :javascript
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');

@@ -71,7 +71,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    ckeditor (4.0.3)
+    ckeditor (4.0.4)
       mime-types
       orm_adapter
     climate_control (0.0.3)

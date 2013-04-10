@@ -8,12 +8,13 @@ class Article < ActiveRecord::Base
 
 #  scope :main, where(:main => true)
 #  scope :main_for_project, where(:main_for_project => true)
-  scope :visible, where(:hide => false)
+  scope :on_index, where(:hide => false)
+  scope :published, where(:published => true)
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
   attr_accessible :title, :subtitle, :authors, :image, :url, :main, :hide, :content, :favorite, :mhl,
-    :old_id, :published_at, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
+    :old_id, :published_at, :published, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
     :social_image, :delete_social_image, :position
 
 #  belongs_to :team
@@ -58,7 +59,7 @@ class Article < ActiveRecord::Base
 
   rails_admin do
     list do
-      include_fields :published_at, :title, :articletype, :position, :hide
+      include_fields :published_at, :title, :articletype, :position, :hide, :published
     end
     show do
       include_fields :title, :published_at, :subtitle, :position
@@ -79,6 +80,8 @@ class Article < ActiveRecord::Base
       include_fields :url do
       end
       include_fields :hide do
+      end
+      include_fields :published do
       end
       include_fields :published_at do
       end

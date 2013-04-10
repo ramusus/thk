@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410193033) do
+ActiveRecord::Schema.define(:version => 20130410215441) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130410193033) do
     t.datetime "social_image_updated_at"
     t.boolean  "main"
     t.boolean  "hide"
+    t.boolean  "published"
     t.datetime "published_at"
     t.string   "title_seo"
     t.text     "right_column"
@@ -159,6 +160,18 @@ ActiveRecord::Schema.define(:version => 20130410193033) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "static_files", :force => true do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.text     "file_meta"
+    t.string   "alt"
+    t.string   "code"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "teams", :force => true do |t|

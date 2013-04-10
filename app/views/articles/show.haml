@@ -1,4 +1,9 @@
+= content_for(:title) do
+  ТХК - #{@article.title}
+
 :javascript
+  VK.init({apiId: 3560256, onlyWidgets: true});
+
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
     $('ul.page-menu li a[href$="#{@article.type.slug}"]').parent().addClass('active');
@@ -41,6 +46,11 @@
         %p= @article.subtitle.html_safe
       .article-by
         = @article.authors.html_safe
+      .article-social
+        .fb-like{'data-send' => "false", 'data-layout' => "button_count", 'data-width' => "150", 'data-show-faces' => "false"}
+        #vk_like
+        :javascript
+          VK.Widgets.Like("vk_like", {type: "button"});
       = @article.content.html_safe
     - if @articles.count > 0
       .article-related
@@ -56,11 +66,12 @@
           %span.tabs-switcher-item Facebook
       .tabs-container
         .tabs-tab.active
-          %img{:src => "/images/data/c_vk.png", :alt => ""}
+          #vk_comments
+          :javascript
+            VK.Widgets.Comments("vk_comments", {limit: 10, width: "650", attach: "photo,video,link"});
         .tabs-tab
-          фб
+          .fb-comments{'data-width' => "650", 'data-num-posts' => "10"}
   = render "right_column"
-
 
 -#
       .article-social

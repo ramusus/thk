@@ -1,3 +1,6 @@
+= content_for(:title) do
+  ТХК - Команда
+
 :javascript
   $(function() {
     $('ul.menu li a[href="#{thk_path}"]').parent().addClass('active');
@@ -33,26 +36,26 @@
       - if @people.direction.count > 0
         %li
           %a{:href => "#direction"} руководство
-    - if @people.forwards.count > 0
-      .block#forwards
-        %h2.block-header
-          %span НАПАДАЮЩИЕ
-        - if not @team.people_statistic.empty?
-          = @team.people_statistic.html_safe
-        %ul.person-list
-          = render :partial => 'person', :collection => @people.forwards, :locals => {:player => true}
-    - if @people.defenders.count > 0
-      .block#defenders
-        %h2.block-header
-          %span Защитики
-        %ul.person-list
-          = render :partial => 'person', :collection => @people.defenders, :locals => {:player => true}
+    - if not @team.people_statistic.empty?
+      = @team.people_statistic.html_safe
     - if @people.goalkeepers.count > 0
       .block#goalkeepers
         %h2.block-header
           %span Вратари
         %ul.person-list
           = render :partial => 'person', :collection => @people.goalkeepers, :locals => {:player => true}
+    - if @people.defenders.count > 0
+      .block#defenders
+        %h2.block-header
+          %span Защитики
+        %ul.person-list
+          = render :partial => 'person', :collection => @people.defenders, :locals => {:player => true}
+    - if @people.forwards.count > 0
+      .block#forwards
+        %h2.block-header
+          %span НАПАДАЮЩИЕ
+        %ul.person-list
+          = render :partial => 'person', :collection => @people.forwards, :locals => {:player => true}
     - if @people.coaches.count > 0
       .block#coaches
         %h2.block-header

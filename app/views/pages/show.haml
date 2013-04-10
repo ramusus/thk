@@ -1,10 +1,13 @@
+= content_for(:title) do
+  ТХК - Команда
+
 :javascript
   $(function() {
     $('ul.page-menu li a[href="'+document.location.pathname+'"]').parent().addClass('active');
   });
 .content.columns.clear
   .main.page
-    %h1= КОМАНДА
+    %h1 КОМАНДА
     %ul.page-menu
       %li
         %a{:href => thk_path} СОСТАВ ТХК

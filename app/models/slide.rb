@@ -14,7 +14,7 @@ class Slide < ActiveRecord::Base
 
   rails_admin do
     list do
-      include_fields :content
+      include_fields :content, :position
     end
     show do
       include_fields :content
