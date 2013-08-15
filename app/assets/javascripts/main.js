@@ -46,6 +46,18 @@ var init_sliders = function() {
     });
 }
 
+manage_visible_articles = function(articles_visible) {
+    $('ul.article-list.clear li').slice(0, articles_visible).show();
+
+    if($('ul.article-list.clear li').length > articles_visible)
+        $('ul.article-list.clear').after('<div class="loadmore">Загрузить еще материалов ...</div>');
+
+    $('.loadmore').click(function() {
+        $('ul.article-list.clear li').show();
+        $(this).hide();
+    });
+}
+
 $(function() {
     $('.tabs').each(function() {
         var $box = $(this),

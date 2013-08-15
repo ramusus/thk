@@ -9,5 +9,5 @@ load 'config/deploy' # remove this line to skip loading any of the default tasks
 
 set :default_environment, {
   'LANG' => 'en_US.UTF-8',
-  'PATH' => '/usr/kerberos/sbin:/usr/sbin:/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin'
+  'PATH' => '/usr/kerberos/sbin:/usr/sbin:/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/'
 }

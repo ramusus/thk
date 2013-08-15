@@ -40,7 +40,6 @@
   def index
     @articles = Article.published.on_index
     @slides = Slide.visible
-    @games = Game
 
     respond_to do |format|
       format.html

@@ -47,7 +47,7 @@
     - if @people.defenders.count > 0
       .block#defenders
         %h2.block-header
-          %span Защитики
+          %span Защитники
         %ul.person-list
           = render :partial => 'person', :collection => @people.defenders, :locals => {:player => true}
     - if @people.forwards.count > 0

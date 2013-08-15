@@ -8,6 +8,7 @@
       $('.tabs-switcher-item:last').click();
       $('.tabs-container ul:first').replaceWith('<p>Информации о предстоящих матчах на данный момент нет</p>');
     }
+    manage_visible_articles(14);
   });
 .splash
   .slider
@@ -43,16 +44,16 @@
       .tabs-container
         .tabs-tab.active
           %ul.list
-            - @games.future.order('date ASC').slice(0,3).each do |game|
+            - Game.future.reorder('date ASC').slice(0,3).each do |game|
               %li
                 .article-date
                   .digit= l game.date, :format => "%d"
                   %br
                   = l game.date, :format => "%b / %a / %H:%M"
-                %p= "#{game.team} : #{game.rival}"
+                %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
         .tabs-tab
           %ul.list
-            - @games.past.order('date DESC').slice(0,3).each do |game|
+            - Game.past.reorder('date DESC').slice(0,3).each do |game|
               %li
                 .score
                   %span.digit= game.score_host
@@ -60,13 +61,9 @@
                   %span.digit= game.score_guest
                   %br
                   = l game.date, :format => "%d %b / %a"
-                %p= "#{game.team} : #{game.rival}"
+                %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
     .sideblock.info
       = @info_vhl
     .sideblock
       %h3.sideblock-header Мы в соцсетях
       = @social_links
-
--#
-    .loadmore
-      Загрузить еще материалов ...
