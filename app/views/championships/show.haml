@@ -13,7 +13,7 @@
         %li{:class => (championship.id == @championship.id ? 'active' : '')}
           = link_to championship.name, championship
     .tabs
-      - if @games.future.count > 0 and @games.past.count > 0
+      - if @championship.games.future.count > 0 and @championship.games.past.count > 0
         %p.page-submenu.tabs-switcher
           %span.tabs-switcher-item.active будущие игры
           %span.tabs-switcher-item прошедшие игры
@@ -26,14 +26,14 @@
             %dd Победа
             %dt.results-loss
             %dd Проигрыш
-          - if @games.future.count > 0
+          - if @championship.games.future.count > 0
             .tabs-tab
               %table.results-table
-                = render :partial => 'game', :collection => @games.future
-          - if @games.past.count > 0
+                = render :partial => 'game', :collection => @championship.games.future
+          - if @championship.games.past.count > 0
             .tabs-tab
               %table.results-table
-                = render :partial => 'game', :collection => @games.past
+                = render :partial => 'game', :collection => @championship.games.past
           :javascript
             $('.tabs-tab:first').addClass('active');
   = render "right_column"

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 class Game < ActiveRecord::Base
 
-  scope :past, where("date < ?", Time.now)
-  scope :future, where("date > ?", Time.now)
   default_scope :order => 'date DESC'
   attr_accessible :date, :championship_id, :rival, :team_id, :home, :score_host, :score_guest, :finished
 
@@ -21,6 +19,13 @@ class Game < ActiveRecord::Base
     if option
       option[1]
     end
+  end
+
+  def self.past
+    self.where("date < ?", Time.now)
+  end
+  def self.future
+    self.where("date > ?", Time.now)
   end
 
   def finished?
