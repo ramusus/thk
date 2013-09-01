@@ -1,0 +1,28 @@
+= content_for(:title) do
+  Матчи: ТХК - Архив
+
+:javascript
+  $(function() {
+    $('ul.menu li a[href$="#{championships_path}"]').parent().addClass('active');
+  });
+.content.columns.clear
+  .main.page
+    %h1 Матчи
+    %ul.page-menu
+      - @championships.each do |championship|
+        %li
+          = link_to championship.name, championship
+      - if @archive
+        %li{:class => 'active'}
+          = link_to 'Архив', championships_archive_path
+    - @archive_championships.each do |championship|
+      = link_to championship.name, championship
+  = render "right_column"
+-#
+        .filter
+          %a{:href => "#"} ЯНВ - ФЕВ
+          %a{:href => "#"} МАР - АПР
+          %a{:href => "#"} МАЙ - ИЮН
+          %a{:href => "#"} ИЮЛ - АВГ
+          %a{:href => "#"} СЕН - ОКТ
+          %a.active{:href => "#"} НОЯ - ДЕК

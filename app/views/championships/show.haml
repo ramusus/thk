@@ -12,12 +12,17 @@
       - @championships.each do |championship|
         %li{:class => (championship.id == @championship.id ? 'active' : '')}
           = link_to championship.name, championship
+      - if @archive
+        %li{:class => (@championship.archive ? 'active' : '')}
+          = link_to 'Архив', championships_archive_path
     .tabs
       - if @championship.games.future.count > 0 and @championship.games.past.count > 0
         %p.page-submenu.tabs-switcher
           %span.tabs-switcher-item.active будущие игры
           %span.tabs-switcher-item прошедшие игры
       .block
+        - if @championship.archive
+          %h1=@championship.name
         - if not @championship.statistic.empty?
           = @championship.statistic.html_safe
         .results.tabs-container

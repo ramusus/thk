@@ -1,4 +1,6 @@
 Project::Application.routes.draw do
+
+  match '/championships/archive/' => 'championships#archive', :as => "championships_archive"
   resources :championships
   resources :teams
 
