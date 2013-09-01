@@ -22,7 +22,7 @@
           %span.tabs-switcher-item прошедшие игры
       .block
         - if @championship.archive
-          %h1=@championship.name
+          %h2=@championship.name
         - if not @championship.statistic.empty?
           = @championship.statistic.html_safe
         .results.tabs-container
