@@ -16,7 +16,8 @@
         %li{:class => 'active'}
           = link_to 'Архив', championships_archive_path
     - @archive_championships.each do |championship|
-      = link_to championship.name, championship
+      %div
+        = link_to championship.name, championship
   = render "right_column"
 -#
         .filter
