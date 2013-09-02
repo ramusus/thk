@@ -8,7 +8,7 @@ class ChampionshipsController < ApplicationController
   end
 
   def index
-    @championship = Championship.first
+    @championship = Championship.where(:archive => false).first
     render 'show'
   end
 
