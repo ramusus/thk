@@ -839,7 +839,7 @@ h1 {
   margin-top: 0;
   background: #e7eaec;
   list-style: none;
-  padding: 0; }
+  padding: 2px; }
   /* line 476, screen.scss */
   .sidelist:after {
     position: absolute;
@@ -871,16 +871,16 @@ h1 {
   /* line 504, screen.scss */
   .sidelist-item a:hover {
     color: #1c75bb; }
+  .sidelist-item a {
+    display: block;
+    height: 100%;
+  }
 
 /* line 509, screen.scss */
 .sidelist-item_featured {
-  background: #5281a1; }
-  /* line 511, screen.scss */
-  .sidelist-item_featured a {
-    color: #fff; }
-    /* line 513, screen.scss */
-    .sidelist-item_featured a:hover {
-      color: #eee; }
+  border: solid 3px #006496;
+   }
+
 
 /* line 518, screen.scss */
 .sidelist-image {
@@ -889,7 +889,7 @@ h1 {
 
 /* line 522, screen.scss */
 .sidelist-title {
-  display: block;
+  display: none;
   font: 23px/23px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   margin-bottom: 0.25em;
   text-transform: uppercase; }
@@ -1237,19 +1237,18 @@ h1 {
 /* line 837, screen.scss */
 .slider-overlay {
   position: absolute;
-  padding: 0 33px;
-  padding-top: 45px;
+  padding: 70px 10px 0 70px;
   height: 325px;
-  width: 465px;
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(80%, #000000), color-stop(100%, rgba(0, 0, 0, 0)));
+  width: 445px;
+  /*background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(80%, #000000), color-stop(100%, rgba(0, 0, 0, 0)));
   background: -webkit-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
   background: -moz-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
   background: -o-linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%); }
+  background: linear-gradient(left, #000000 0%, #000000 80%, rgba(0, 0, 0, 0) 100%);*/ }
 
 /* line 845, screen.scss */
 .slider-title {
-  font: 79px/77px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
+  font: 55px/1.2em "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   text-transform: uppercase;
   color: #fff; }
   /* line 849, screen.scss */
@@ -1258,17 +1257,16 @@ h1 {
     display: block; }
   /* line 853, screen.scss */
   .slider-title .digit {
-    height: 94px;
-    line-height: 94px;
-    font-size: 79px;
-    width: 80px; }
+    height: 77px;
+    line-height: 82px;
+    font-size: 67px;
+    width: 66px; }
 
 /* line 861, screen.scss */
 .slider-item_result .slider-title {
   position: relative;
   display: block;
-  width: 400px;
-  text-align: center; }
+  width: 440px; }
 
 /* line 868, screen.scss */
 .slider-title-type {
@@ -1296,15 +1294,23 @@ h1 {
 
 /* line 891, screen.scss */
 .slider-title-teams {
-  font-size: 35px; }
+  display: block;
+  margin-bottom: 13px;
+  font-size: 36px;
+  line-height: 1.2em; }
+.main-title {
+  display: block;
+  margin-bottom: 5px;
+  line-height: 1em;
+}
 
 /* line 895, screen.scss */
 .inverted .slider-overlay {
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(80%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+  /*background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(80%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
   background: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
   background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
   background: -o-linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%); }
+  background: linear-gradient(left, #ffffff 0%, #ffffff 80%, rgba(255, 255, 255, 0) 100%);*/ }
 /* line 898, screen.scss */
 .inverted .slider-title {
   color: #000; }
@@ -1312,8 +1318,8 @@ h1 {
 /* line 902, screen.scss */
 .slider-nav {
   position: absolute;
-  bottom: 30px;
-  left: 33px;
+  bottom: 20px;
+  left: 57px;
   font: 23px/36px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   color: #fff; }
   /* line 908, screen.scss */
@@ -1329,16 +1335,19 @@ h1 {
       opacity: 0.9; }
   /* line 919, screen.scss */
   .slider-nav .slider-nav-next {
-    background-position: -12px 0; }
+    background-position: -12px 0; 
+    width: 13px;}
   /* line 922, screen.scss */
   .slider-nav.inverted {
     color: #000; }
     /* line 924, screen.scss */
     .slider-nav.inverted .slider-nav-prev {
-      background-position: 0 -36px; }
+      background-position: 0 -36px; 
+      margin-right: 5px;}
     /* line 925, screen.scss */
     .slider-nav.inverted .slider-nav-next {
-      background-position: -12px -36px; }
+      background-position: -12px -36px; 
+      margin-left: 5px;}
 
 /* line 929, screen.scss */
 .article-slider .slider-nav {

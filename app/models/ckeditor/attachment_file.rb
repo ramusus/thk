@@ -1,4 +1,6 @@
 class Ckeditor::AttachmentFile < Ckeditor::Asset
+  attr_accessible :data 
+  
   has_attached_file :data,
                     :url => "/system/attachments/:id/:filename",
                     :path => ":rails_root/public/system/attachments/:id/:filename"

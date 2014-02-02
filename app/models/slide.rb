@@ -3,7 +3,7 @@ class Slide < ActiveRecord::Base
   default_scope :order => 'position DESC'
   attr_accessible :hide, :content, :color, :background_color, :link, :position, :image, :inverted
 
-  has_attached_file :image, :styles => {:slide => "804x370"}
+  has_attached_file :image, :styles => {:slide => "804x370", :long_slide => "1100x370"}
 
   def save(args={})
     if not self.position

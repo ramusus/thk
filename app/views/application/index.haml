@@ -19,7 +19,7 @@
           %li.slider-item.slider-item_result{:class => classes.join(' ')}
             - if slide.image.exists?
               %a{:href => slide.link}
-                %img.slider-image{:src => slide.image(:slide), :alt => ""}/
+                %img.slider-image{:src => slide.image(:long_slide), :alt => ""}/
             .slider-overlay
               %a.slider-title{:href => slide.link}
                 = slide.content.html_safe

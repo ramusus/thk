@@ -1,4 +1,5 @@
 class Ckeditor::Picture < Ckeditor::Asset
+  attr_accessible :data 
   has_attached_file :data,
                     :url => "/system/pictures/:id/:style_:basename.:extension",
                     :path => ":rails_root/public/system/pictures/:id/:style_:basename.:extension",
