@@ -46,16 +46,33 @@ var init_sliders = function() {
     });
 }
 
+// Функция, подгрузки статей в количестве v_number
 manage_visible_articles = function(articles_visible) {
-    $('ul.article-list.clear li').slice(0, articles_visible).show();
+    var s_list = $('ul.article-list.clear'),
+        s_items = $('li', s_list),
+        s_items_hidden = s_items.filter(':hidden'),
+        s_load_more,
+        v_number = 10;
 
-    if($('ul.article-list.clear li').length > articles_visible)
-        $('ul.article-list.clear').after('<div class="loadmore">Загрузить еще материалов ...</div>');
+    s_items.slice(0, articles_visible).show();
 
-    $('.loadmore').click(function() {
-        $('ul.article-list.clear li').show();
-        $(this).hide();
-    });
+    if(s_items.length > articles_visible)
+        s_list.after('<div class="loadmore">Загрузить еще материалов ...</div>');
+
+    s_load_more = $('.loadmore');
+    s_load_more.click(showMoreArticles);
+
+    // Определяет показ следующих пунктов
+    function showMoreArticles() {
+        var v_this = $(this),
+            s_items_hidden = s_items.filter(':hidden'),
+            v_hidden_items = s_items_hidden.length;
+
+        s_items_hidden.slice(0, v_number).show();
+        if(v_hidden_items <= v_number - 1) {
+            v_this.hide();
+        }
+    }
 }
 
 $(function() {
