@@ -760,6 +760,10 @@ h1 {
     padding: 0 20px;
     border: solid whitesmoke;
     border-width: 3px 0; }
+    
+  .results-table-prev .item-score {
+    display: none;
+  }
 
 /* line 407, screen.scss */
 .teams {

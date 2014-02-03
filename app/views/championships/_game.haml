@@ -4,7 +4,7 @@
       %span.date-day= l game.date, :format => "%d"
       %span= l game.date, :format => "%b / %a"
       %span= l game.date, :format => "%H:%M"
-  %td
+  %td.item-score
     .score
       - if game.finished?
         %span.digit= game.score_host

@@ -72,7 +72,32 @@ $(function() {
             $(this).addClass(CLASS_ACTIVE);
             $tabs.eq(index).addClass(CLASS_ACTIVE);
         })
-    })
+    });
+
+    // По умолчанию необходимо показывать на странице championships прошедшие игры
+    defaultGames();
+    function defaultGames() {
+        var v_url_page = window.location.href,
+            v_reg_exp = /championships/,
+            v_result_search = v_url_page.search(v_reg_exp),
+            v_need_tab = 'прошедшие игры',
+
+            s_tabs = $('.tabs-switcher-item');
+        
+        if(v_result_search < 0) return;
+
+        s_tabs.each( searchNeedTab );
+
+        function searchNeedTab(index, value) {
+            var s_tab = $(value),
+                v_text = s_tab.text();
+            
+            if( v_text == v_need_tab ) {
+                s_tab.click();
+            }
+        }
+
+    }
 
     init_sliders();
 
