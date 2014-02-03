@@ -424,6 +424,13 @@ h2 {
   .topmenu a {
     color: #1c75bc;
     text-decoration: underline; }
+  .topmenu .welcome-tver {
+    padding-left: 24px;
+    background: url("../images/icon_welcome.png") no-repeat 0 0;
+  }
+  .topmenu .welcome-tver a:hover {
+    color: #f59800 !important;
+  }
 
 /* line 97, screen.scss */
 .menu {
@@ -435,6 +442,7 @@ h2 {
   margin: 0;
   padding-left: 160px;
   list-style: none;
+  text-align: center;
   font: 28px/55px "PF Din Comp Pro Medium", Tahoma, Arial, sans-serif;
   text-transform: uppercase;
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #00326e), color-stop(100%, #006496));
@@ -457,7 +465,7 @@ h2 {
   /* line 123, screen.scss */
   .menu li {
     display: inline-block;
-    margin: 0 40px; }
+    margin: 0 17px; }
   /* line 127, screen.scss */
   .menu a {
     color: #fff; }
