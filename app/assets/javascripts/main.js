@@ -68,8 +68,8 @@ manage_visible_articles = function(articles_visible) {
             s_items_hidden = s_items.filter(':hidden'),
             v_hidden_items = s_items_hidden.length;
 
-        s_items_hidden.slice(0, v_number).show();
-        if(v_hidden_items <= v_number - 1) {
+        s_items_hidden.slice(0, articles_visible).show();
+        if(v_hidden_items <= articles_visible - 1) {
             v_this.hide();
         }
     }
