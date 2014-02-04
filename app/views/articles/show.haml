@@ -55,7 +55,7 @@
     - if @articles.count > 0
       .article-related
         %h2 Свежие публикации
-        %ul.article-list.clear
+        %ul.article-list.clear.article-new
           = render :partial => 'article', :collection => @articles
     .b-comments-social
       %h2 КОММЕНТАРИИ
