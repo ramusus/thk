@@ -18,8 +18,8 @@
     .tabs
       - if @championship.games.future.count > 0 and @championship.games.past.count > 0
         %p.page-submenu.tabs-switcher
-          %span.tabs-switcher-item.active будущие игры
-          %span.tabs-switcher-item прошедшие игры
+          %span.tabs-switcher-item.active прошедшие игры
+          %span.tabs-switcher-item будущие игры
       .block
         - if @championship.archive
           %h1=@championship.name
@@ -33,12 +33,12 @@
             %dd Проигрыш
           - if @championship.games.future.count > 0
             .tabs-tab
-              %table.results-table.results-table-prev
-                = render :partial => 'game', :collection => @championship.games.future.reorder('date ASC')
-          - if @championship.games.past.count > 0
-            .tabs-tab
               %table.results-table
                 = render :partial => 'game', :collection => @championship.games.past.reorder('date DESC')
+          - if @championship.games.past.count > 0
+            .tabs-tab
+              %table.results-table.results-table-prev
+                = render :partial => 'game', :collection => @championship.games.future.reorder('date ASC')
           :javascript
             $('.tabs-tab:first').addClass('active');
   = render "right_column"

@@ -57,20 +57,16 @@
         %h2 Свежие публикации
         %ul.article-list.clear
           = render :partial => 'article', :collection => @articles
-    .article-comments.tabs
-      %h2
-        КОММЕНТАРИИ
-        %span.tabs-switcher
-          %span.tabs-switcher-item.active Вконтакте
-          /
-          %span.tabs-switcher-item Facebook
-      .tabs-container
-        .tabs-tab.active
-          #vk_comments
-          :javascript
-            VK.Widgets.Comments("vk_comments", {limit: 10, width: "650", attach: "photo,video,link"});
-        .tabs-tab
-          .fb-comments{'data-width' => "650", 'data-num-posts' => "10"}
+    .b-comments-social
+      %h2 КОММЕНТАРИИ
+      .item.item-vk
+        %h3.title Вконтакте
+        #vk_comments
+        :javascript
+          VK.Widgets.Comments("vk_comments", {limit: 10, width: "367", attach: "photo,video,link"});
+      .item.item-fb
+        %h3.title Facebook
+        .fb-comments{'data-width' => "367", 'data-num-posts' => "10"}
   = render "right_column"
 
 -#
