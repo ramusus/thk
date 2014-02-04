@@ -41,7 +41,7 @@
         = l @article.published_at, :format => "%Y"
         .digit= l @article.published_at, :format => "%d"
         = l @article.published_at, :format => "%b / %a"
-      %h2= @article.title
+      %h2.article-main-title= @article.title
       .article-lead
         %p= @article.subtitle.html_safe
       .article-by
@@ -50,7 +50,7 @@
         .fb-like{'data-send' => "false", 'data-layout' => "button_count", 'data-width' => "150", 'data-show-faces' => "false"}
         #vk_like
         :javascript
-          VK.Widgets.Like("vk_like", {type: "button"});
+          VK.Widgets.Like("vk_like", {type: "button", height: 20});
       = @article.content.html_safe
     - if @articles.count > 0
       .article-related

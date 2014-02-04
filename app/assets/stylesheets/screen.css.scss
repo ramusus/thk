@@ -1196,7 +1196,11 @@ h1 {
   line-height: 20px;
   max-height: 80px;
   overflow: hidden; }
-
+.article-main-title {
+  margin-bottom: 10px;
+  font-size: 35px;
+  line-height: 1.2em;
+}
 /* line 794, screen.scss */
 .loadmore {
   padding-top: 35px;
@@ -1380,7 +1384,7 @@ h1 {
   .article .article-date {
     text-align: center;
     width: 35px;
-    margin: 0 0 10px 20px;
+    margin: -16px 0 10px 20px;
     float: right;
     white-space: nowrap; }
   /* line 947, screen.scss */
@@ -1398,19 +1402,32 @@ h1 {
 
 /* line 960, screen.scss */
 .article-lead {
+  margin-bottom: 15px;
   font-size: 19px;
-  line-height: 21px; }
+  line-height: 1.2em; }
   /* line 963, screen.scss */
   .article-lead p {
     margin-bottom: 0.5em; }
 
 /* line 969, screen.scss */
 .article-by p {
-  margin: 0; }
+  margin: 0;
+  color: #7D7D7D; }
 
 /* line 973, screen.scss */
 .article-social {
-  margin: 1em 0; }
+  margin: 1em 0; 
+
+  .fb-like {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  #vk_like {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
 
 /* line 977, screen.scss */
 .tabs-switcher {
@@ -1562,12 +1579,12 @@ h2 .tabs-switcher {
 
 .b-subtitle {
   margin-bottom: 5px;
-  font-size: 22px;
+  font: 21px/1.2em Arial, sans-serif;
   text-align: center;
 
   span {
     display: inline-block;
-    padding: 8px 6px 6px;
+    padding: 6px 6px 6px;
     background: #D0F3F9;
   }
 }
