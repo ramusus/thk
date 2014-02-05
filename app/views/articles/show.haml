@@ -51,7 +51,8 @@
         #vk_like
         :javascript
           VK.Widgets.Like("vk_like", {type: "button", height: 20});
-      = @article.content.html_safe
+      .b-sub-article
+        = @article.content.html_safe
     - if @articles.count > 0
       .article-related
         %h2 Свежие публикации
