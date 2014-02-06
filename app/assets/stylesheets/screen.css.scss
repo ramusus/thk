@@ -1546,7 +1546,7 @@ h2 .tabs-switcher {
 .b-sub-article {
   .title {
     position: relative;
-    margin-top: 0;
+    margin-top: 17px;
     text-transform: none;
     text-align: center;
     font: bold 21px/1.2em Arial, sans-serif;
@@ -1580,15 +1580,19 @@ h2 .tabs-switcher {
   }
 }
 
-.b-subtitle {
+.b-fact {
+  padding-top: 20px;
   margin-bottom: 5px;
   font: 21px/1.2em Arial, sans-serif;
   text-align: center;
 
-  span {
+  div {
     display: inline-block;
     padding: 6px 6px 6px;
     background: #D0F3F9;
+  }
+  .title {
+    margin-top: 0;
   }
 }
 
