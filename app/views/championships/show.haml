@@ -34,11 +34,11 @@
           - if @championship.games.future.count > 0
             .tabs-tab
               %table.results-table
-                = render :partial => 'game', :collection => @championship.games.past.reorder('date DESC')
+                = render :partial => 'game', :collection => @championship.games.future.reorder('date DESC')
           - if @championship.games.past.count > 0
             .tabs-tab
               %table.results-table.results-table-prev
-                = render :partial => 'game', :collection => @championship.games.future.reorder('date ASC')
+                = render :partial => 'game', :collection => @championship.games.past.reorder('date ASC')
           :javascript
             $('.tabs-tab:first').addClass('active');
   = render "right_column"
