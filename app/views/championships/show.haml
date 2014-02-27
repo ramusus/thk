@@ -33,11 +33,11 @@
             %dd Проигрыш
           - if @championship.games.future.count > 0
             .tabs-tab
-              %table.results-table
+              %table.results-table.results-table-prev
                 = render :partial => 'game', :collection => @championship.games.future.reorder('date DESC')
           - if @championship.games.past.count > 0
             .tabs-tab
-              %table.results-table.results-table-prev
+              %table.results-table
                 = render :partial => 'game', :collection => @championship.games.past.reorder('date ASC')
           :javascript
             $('.tabs-tab:first').addClass('active');
