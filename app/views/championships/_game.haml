@@ -6,7 +6,7 @@
       %span= l game.date, :format => "%H:%M"
   %td.item-score
     .score
-      - if !game.finished?
+      - if game.finished?
         %span.digit= game.score_host
         %span.score-delim :
         %span.digit= game.score_guest
