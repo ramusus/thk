@@ -5,14 +5,15 @@
   $(function() {
     $('ul.menu li a[href$="#{articles_path}"]').parent().addClass('active');
     $('ul.page-menu li a[href="'+document.location.pathname+'"]').parent().addClass('active');
-    manage_visible_articles(30);
+    // manage_visible_articles(30);
+    var block = new ArticlesBlock($('.articles'), {filter: #{@context.to_json}});
   });
 .content.columns.clear
   .main.page
-    %h1 Публикации
+    %h1 Публикации    
     = render "top_menu"
     .articles
       .block
         %ul.article-list.clear
-          = render :partial => 'article', :collection => @articles
+          -#= render :partial => 'article', :collection => @articles
   = render "right_column"

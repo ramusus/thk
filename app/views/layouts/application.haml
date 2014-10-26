@@ -37,11 +37,11 @@
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     / <![endif]
-    - if @file_background
-      %img.cover{:src => @file_background.file, :alt => ""}
+    - get_file 'background' do |background|    
+      %img.cover{:src => background.file, :alt => ""}
     #wrapper
       %header.header
-        = @header_menu
+        = get_chunk('header_menu')
         = link_to 'ТХК', root_path, {:class => 'logo'}
         .stick
           %a.logo{:href => "/"} ТХК
@@ -54,10 +54,11 @@
               = link_to 'Публикации', articles_path
       = yield
       %footer.footer
-        = @footer_menu
-        = @partners
-        .copy
-          = @copyright
+        = get_chunk('footer_menu')
+        = get_chunk('partners')
+        - get_chunk('copyright') do |text|
+          .copy
+            = text
 
     / %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"}
     / :javascript

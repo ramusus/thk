@@ -46,9 +46,9 @@
         %p= @article.subtitle.html_safe
       .article-by
         = @article.authors.html_safe
-      .article-social
-        .fb-like{'data-send' => "false", 'data-layout' => "button_count", 'data-width' => "150", 'data-show-faces' => "false"}
+      .article-social        
         #vk_like
+        .fb-like{'data-send' => "false", 'data-layout' => "button_count", 'data-width' => "150", 'data-show-faces' => "false"}
         :javascript
           VK.Widgets.Like("vk_like", {type: "button", height: 20});
       .b-sub-article

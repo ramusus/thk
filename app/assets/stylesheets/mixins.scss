@@ -1,0 +1,43 @@
+@mixin vertical-align {
+   position: relative;
+   top: 50%;
+   -webkit-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+
+@mixin transition($args:'all 400ms') {
+	-webkit-transition: #{$args};
+	-moz-transition: #{$args};
+	transition: #{$args};
+}
+
+@mixin transform($args) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	transform: $args;
+}
+
+@mixin transform-style($args) {
+	-webkit-transform-style: $args;
+	-moz-transform-style: $args;
+	transform-style: $args;
+}
+
+@mixin transform-origin($args) {
+	-webkit-transform-origin: $args;
+	-moz-transform-origin: $args;
+	transform-origin: $args;
+}
+
+@mixin perspective($args) {
+	-webkit-perspective: $args;
+	-moz-perspective: $args;
+	perspective: $args;
+}
+
+@mixin perspective-origin($args) {
+	-webkit-perspective-origin: $args;
+	-moz-perspective-origin: $args;
+	perspective-origin: $args;
+}

@@ -10,12 +10,13 @@ class Article < ActiveRecord::Base
 #  scope :main_for_project, where(:main_for_project => true)
   scope :on_index, where(:hide => false)
   scope :published, where(:published => true)
+  scope :favorites, unscoped.where(:favorite => true).order('position DESC')
 #  scope :visible_on_index, visible.where(:hide_on_index => false)
 
   default_scope :order => 'published_at DESC, id DESC'
   attr_accessible :title, :subtitle, :authors, :image, :url, :main, :hide, :content, :favorite, :mhl,
     :old_id, :published_at, :published, :title_seo, :right_column, :articletype_id, :delete_image, :old_group_id,
-    :social_image, :delete_social_image, :position
+    :social_image, :delete_social_image, :position    
 
 #  belongs_to :team
 
@@ -55,6 +56,14 @@ class Article < ActiveRecord::Base
 
   def is_video?
     self.type.id == Articletype::VIDEO_ID
+  end
+
+  def no_json(filter)
+    {
+      title: title,
+      image: image.exists? ? image(:square) : nil,
+      path:  article_path(self)
+    }
   end
 
   rails_admin do

@@ -6,7 +6,7 @@
 #  rescue_from Exception, :with => :log_exception_handler # tells rails to forward the 'Exception' (you can change the type) to the handler of the module
 
   protect_from_forgery
-  before_filter :set_locale, :set_context
+  before_filter :set_locale #, :set_context
 
   def set_context
 
@@ -35,15 +35,6 @@
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
-  end
-
-  def index
-    @articles = Article.published.on_index
-    @slides = Slide.visible
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def search
@@ -76,5 +67,29 @@
       nil
     end
   end
+
+  helper_method :get_chunk, :get_file
+
+  def get_chunk(code, &block) 
+    item = Chunk.find_by_code(code)    
+    if(item and item.visible)
+      text = item.content.html_safe
+      yield text if block_given?
+    else 
+      text = ''       
+    end
+    text
+  end
+
+  def get_file(name, &block) 
+    file = StaticFile.find_by_code(name)
+    if file and file.file and file.file.exists?
+      yield file if block_given?
+    else
+      file = nil
+    end
+    file
+  end
+  
 
 end

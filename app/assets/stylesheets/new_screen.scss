@@ -1,0 +1,20 @@
+@import 'mixins';
+
+.article-list {
+  .article-item {    
+    .article-image {
+      overflow: hidden;
+      height: 230px;
+      img {
+        @include transition(all 1000ms);
+      }
+    }  
+    &:hover {
+      .article-image {
+        img {          
+          transform: scale(1.2);
+        }        
+      }
+    }    
+  }
+}

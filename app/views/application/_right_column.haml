@@ -2,5 +2,6 @@
   %ul.sidelist
     = render "sidebar"
   .sideblock
-    %h3.sideblock-header Мы в соцсетях
-    = @social_links
+    - get_chunk 'social_links' do |text|
+      %h3.sideblock-header Мы в соцсетях?
+      = text

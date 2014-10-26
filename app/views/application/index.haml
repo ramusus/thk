@@ -8,7 +8,8 @@
       $('.tabs-switcher-item:last').click();
       $('.tabs-container ul:first').replaceWith('<p>Информации о предстоящих матчах на данный момент нет</p>');
     }
-    manage_visible_articles(14);
+    // manage_visible_articles(14);
+    ArticlesBlock($('.main.page'), {per_page: 14, filter: {on_index: true}});
   });
 .splash
   .slider
@@ -34,7 +35,7 @@
   .main.page
     .block
       %ul.article-list.clear
-        = render :partial => 'article', :collection => @articles
+        -#= render :partial => 'article', :collection => @articles
   .sidebar
     .sideblock.tabs
       %h3.sideblock-header МАТЧИ
@@ -63,7 +64,7 @@
                   = l game.date, :format => "%d %b / %a"
                 %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
     .sideblock.info
-      = @info_vhl
+      = get_chunk 'info_vhl'
     .sideblock
       %h3.sideblock-header Мы в соцсетях
-      = @social_links
+      = get_chunk 'social_links'

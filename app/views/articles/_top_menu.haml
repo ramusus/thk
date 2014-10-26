@@ -1,5 +1,6 @@
+
 %ul.page-menu
-  - @articletypes.each do |type|
+  - Articletype.where(:filter_hide => false).each do |type|
     %li
       %a{:href => articletype_path(type)}= type
   %li

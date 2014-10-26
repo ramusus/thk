@@ -1,22 +1,23 @@
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-#require 'rvm/capistrano'
+require 'rvm/capistrano'
 require 'bundler/capistrano'
+#require 'capistrano/ext/multistage'
 #require 'capistrano/deepmodules'
 
 ssh_options[:forward_agent] = true
 default_run_options[:shell] = '/bin/bash --login'
 
 set :application,     "tver-hockey-club"
-set :deploy_server,   "boron.locum.ru"
+set :deploy_server,   "welcometver.ru"
 
 set :bundle_without,  [:development, :test]
 
-set :user,            "hosting_abbb"
-set :login,           "abbb"
+set :user,            "andrew"
+set :login,           "andrew"
 set :use_sudo,        false
-set :deploy_to,       "/home/#{user}/projects/#{application}"
-set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
-set :unicorn_pid,     "/var/run/unicorn/#{user}/#{application}.#{login}.pid"
+set :deploy_to,       "/home/tz/apps/#{application}"
+set :unicorn_conf,    "#{shared_path}/unicorn.rb"
+set :unicorn_pid,     "#{release_path}/tmp/pids/unicorn.pid"
 set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
 role :web,            deploy_server
 role :app,            deploy_server
@@ -45,7 +46,6 @@ set :js_source_dir, '../project_html/build/javascripts/'
 set :img_source_dir, '../project_html/build/images/'
 
 default_run_options[:pty] = true
-
 after "bundle:install", "deploy:auto_migrate"
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
@@ -62,7 +62,7 @@ task :set_current_release, :roles => :app do
     set :current_release, latest_release
 end
 
-set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf} -E production)"
 
 # - for unicorn - #
 namespace :deploy do
@@ -136,6 +136,14 @@ namespace :deploy do
 
   end
 end
+
+namespace :rvm do
+  desc 'Trust rvmrc file'
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{current_release}"
+  end
+end
+after "deploy:update_code", "rvm:trust_rvmrc"
 
 if !ENV["NO_PUSH"]
   before "deploy", "deploy:push"

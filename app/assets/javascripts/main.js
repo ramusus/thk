@@ -75,6 +75,67 @@ manage_visible_articles = function(articles_visible) {
     }
 }
 
+function ArticlesBlock(el, options) {
+
+  var settings = $.extend({
+    per_page:  21,
+    filter:  {
+      on_index:  false,
+      type:      null,
+      mhl:       false,
+      published: true
+    }, 
+    template: JST['article'] || null
+  }, options);
+
+  var page = 1;
+
+  function appendLoadmore() {
+    var button = $('<div>').addClass('loadmore').html('Загрузить еще материалов...');
+    $(el).append(button);    
+    return button;
+  }
+
+  function getContext(page_num) {
+    var context = {
+      page: page_num,
+      per_page: settings.per_page
+    }
+    $.each(settings.filter, function(key, val) {
+       if(val) context[key] = val;
+    });    
+    return context;
+  }
+
+  function onLoad(res) {
+    var list = $('ul.article-list', el);
+    var last_page = 0;
+    if(settings.template) {
+      $.each(res, function(i, item) {
+        list.append(settings.template(item));
+        last_page = item.last_page;
+      });
+    }
+    if(page == last_page) {
+      $('.loadmore', el).hide();
+    }
+
+  }
+
+  function loadPage(page_num) {
+    return $.get('/articles.json', getContext(page_num), onLoad, 'json');
+  }
+
+  function init() {
+    $(el).on('click', '.loadmore', function() {
+      page = page + 1;
+      loadPage(page);
+    });
+    loadPage(page).done(appendLoadmore)
+  }
+  init();
+}
+
 $(function() {
     $('.tabs').each(function() {
         var $box = $(this),

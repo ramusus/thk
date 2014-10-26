@@ -43,19 +43,19 @@
         %h2.block-header
           %span Вратари
         %ul.person-list
-          = render :partial => 'person', :collection => @people.goalkeepers, :locals => {:player => true}
+          = render :partial => 'person', :collection => @people.goalkeepers.reorder(:number), :locals => {:player => true}
     - if @people.defenders.count > 0
       .block#defenders
         %h2.block-header
           %span Защитники
         %ul.person-list
-          = render :partial => 'person', :collection => @people.defenders, :locals => {:player => true}
+          = render :partial => 'person', :collection => @people.defenders.reorder(:number), :locals => {:player => true}
     - if @people.forwards.count > 0
       .block#forwards
         %h2.block-header
           %span НАПАДАЮЩИЕ
         %ul.person-list
-          = render :partial => 'person', :collection => @people.forwards, :locals => {:player => true}
+          = render :partial => 'person', :collection => @people.forwards.reorder(:number), :locals => {:player => true}
     - if @people.coaches.count > 0
       .block#coaches
         %h2.block-header

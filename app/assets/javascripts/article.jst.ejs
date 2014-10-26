@@ -1,0 +1,20 @@
+<li class='article-item'>
+  <% if(image) { %>
+    <a href='<%= path %>' class='article-image'>
+      <img src='<%= image %>' alt='<%= title %>' />
+    </a>
+  <% } %>
+  <div class='article-type'>
+    <% if(mhl) { %>
+      <div class='article-type-section'>
+        <a href='/articles/mhl'>МХЛ</a>
+      </div>  
+    <% } %>
+    <a href='<%= type_path %>'><%= type %></a>
+  </div>
+  <div class='article-date'>
+    <div class='digit'><%= day %></div>
+    <%= month %>
+  </div>
+  <a href='<%= path %>' class='article-title'><%= title %></a>
+</li>

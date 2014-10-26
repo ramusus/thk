@@ -1,3 +1,7 @@
+<li class='article-item'>
+  <a href='<%= link %>' class='article-title'><%= title %></a>
+</li>
+
 %li.article-item 
   - if article.image.exists?
     = link_to image_tag(article.image(:square), :alt => article.title), article_path(article), {:class => 'article-image'}
