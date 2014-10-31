@@ -34,6 +34,7 @@ class ArticlesController < ApplicationController
     scope = Article.published.includes(:articletype)
     scope = scope.scoped_by_articletype_id(params[:type]) if params[:type]
     scope = scope.where("mhl = True") if params[:mhl]
+    scope = scope.on_index if params[:on_index]
     page = params[:page] ? params[:page].to_i : 1
     per_page = params[:per_page] ? params[:per_page].to_i : 21
     @articles = scope.page(page).per_page(per_page)
