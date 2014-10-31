@@ -222,6 +222,7 @@ DEPENDENCIES
   ejs
   haml
   jquery-rails
+  kaminari
   paperclip (~> 3.0)
   paperclip-meta
   pg

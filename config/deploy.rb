@@ -4,7 +4,9 @@ require 'bundler/capistrano'
 #require 'capistrano/ext/multistage'
 #require 'capistrano/deepmodules'
 
+
 ssh_options[:forward_agent] = true
+ssh_options[:keys]="~/.ssh/id_rsa"
 default_run_options[:shell] = '/bin/bash --login'
 
 set :application,     "tver-hockey-club"
