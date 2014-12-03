@@ -18,3 +18,45 @@
     }    
   }
 }
+
+
+.sidelist {
+  h3 {
+    margin: 1em 0;
+    font-family: "PF Din Cond Pro Regular";
+    font-weight: normal;
+    text-transform: uppercase;    
+  }  
+}
+
+@mixin digit-background($color) {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $color), color-stop(49%, $color), color-stop(49%, #ffffff), color-stop(51%, #ffffff), color-stop(51%, $color), color-stop(100%, $color));
+  background: -webkit-linear-gradient(top, $color 0%, $color 49%, #ffffff 49%, #ffffff 51%, $color 51%, $color 100%);
+  background: -moz-linear-gradient(top, $color 0%, $color 49%, #ffffff 49%, #ffffff 51%, $color 51%, $color 100%);
+  background: -o-linear-gradient(top, $color 0%, $color 49%, #ffffff 49%, #ffffff 51%, $color 51%, $color 100%);
+  background: linear-gradient(top, $color 0%, $color 49%, #ffffff 49%, #ffffff 51%, $color 51%, $color 100%); 
+}
+
+.birthdays {
+  padding: 1em 2em;
+  .item {
+    margin-bottom: 1em;
+  }
+  .article-date {
+    text-transform: uppercase;
+    &.today {
+      .digit {
+        @include digit-background(#1c75bb);        
+      }
+    }
+  }
+  .persons {
+    padding-top: 0.3em;
+  }
+  .article-title {    
+    text-transform: uppercase;
+    font-family: "PF Din Comp Pro Medium",Tahoma,Arial,sans-serif;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+}

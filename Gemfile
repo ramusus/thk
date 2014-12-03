@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'thin'
 gem 'rails', '3.2.11'
 gem 'russian', '~> 0.6.0'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

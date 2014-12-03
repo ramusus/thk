@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+require 'concerns/birthday_table'
+
 class Person < ActiveRecord::Base
 
   scope :forwards, where(:occupation => 1)
@@ -9,7 +12,7 @@ class Person < ActiveRecord::Base
 
   belongs_to :team
 
-  attr_accessible :birthyear, :description, :notice, :efficiency, :experience, :fouls, :goals, :height, :image, :name, :number, :position, :weight, :delete_image, :occupation, :team_id
+  attr_accessible :birthyear, :birthday, :description, :notice, :efficiency, :experience, :fouls, :goals, :height, :image, :name, :number, :position, :weight, :delete_image, :occupation, :team_id
 
   has_attached_file :image, :styles => {:square => "111x111"}
   attr_accessor :delete_image
@@ -24,6 +27,19 @@ class Person < ActiveRecord::Base
 
   def occupation_text
     OCCUPATION_OPTIONS.select{|x| x[1] == occupation}[0][0]
+  end
+
+  def birthyear 
+    return birthday.year if birthday
+    read_attribute :birthyear
+  end
+
+  def self.birthdays
+    data = ::BirthdayTable.new
+    Person.select('id, name, birthday').where('birthday is not null').each do |item|
+      data.add(item.birthday, item.serializable_hash)
+    end
+    data
   end
 
   def stat
@@ -51,7 +67,9 @@ class Person < ActiveRecord::Base
       include_fields :name
     end
     edit do
-      include_fields :name, :team, :number, :image, :birthyear, :experience, :position, :description, :notice, :weight, :height
+      include_fields :name, :team, :number, :image 
+      field :birthday
+      include_fields :experience, :position, :description, :notice, :weight, :height
       field :occupation, :enum do
         enum_method do
           :occupation_enum

@@ -1,5 +1,6 @@
 class CreatePeople < ActiveRecord::Migration
   def change
+    return if table_exists? :people
     create_table :people do |t|
       t.string :name
       t.integer :number

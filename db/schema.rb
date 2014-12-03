@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410215441) do
+ActiveRecord::Schema.define(:version => 20141203010434) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.datetime "social_image_updated_at"
     t.boolean  "main"
     t.boolean  "hide"
-    t.boolean  "published"
     t.datetime "published_at"
     t.string   "title_seo"
     t.text     "right_column"
@@ -37,9 +36,10 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.text     "content"
     t.string   "url",                       :default => ""
     t.boolean  "favorite"
-    t.integer  "position", :default => 0
     t.text     "authors"
     t.boolean  "mhl"
+    t.integer  "position",                  :default => 0
+    t.boolean  "published"
   end
 
   create_table "articletypes", :force => true do |t|
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
   create_table "championships", :force => true do |t|
     t.string   "name"
     t.boolean  "archive"
+    t.datetime "last_game_date"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.datetime "last_game_date"
     t.text     "statistic"
   end
 
@@ -90,12 +90,12 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.datetime "date"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
-    t.integer  "championship_id"
     t.string   "rival"
     t.boolean  "home"
     t.integer  "score_host"
     t.integer  "score_guest"
     t.integer  "finished",        :default => 0
+    t.integer  "championship_id"
     t.integer  "team_id"
   end
 
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.integer  "occupation"
     t.integer  "team_id"
     t.string   "notice",             :default => ""
+    t.date     "birthday"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -153,13 +154,13 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.text     "content"
     t.string   "link"
     t.boolean  "hide"
-    t.boolean  "inverted"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "inverted"
   end
 
   create_table "static_files", :force => true do |t|
@@ -170,8 +171,8 @@ ActiveRecord::Schema.define(:version => 20130410215441) do
     t.text     "file_meta"
     t.string   "alt"
     t.string   "code"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "teams", :force => true do |t|

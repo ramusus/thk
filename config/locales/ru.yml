@@ -39,6 +39,7 @@ ru:
         number: "Номер"
         image: "Картинка"
         birthyear: "Год рождения"
+        birthday: "Дата рождения"
         experience: "Опыт"
         position: "Должность"
         description: "Описание"

@@ -54,12 +54,14 @@
               = link_to 'Публикации', articles_path
       = yield
       %footer.footer
-        = get_chunk('footer_menu')
-        = get_chunk('partners')
-        - get_chunk('copyright') do |text|
-          .copy
-            = text
-
+        -if content_for? :footer
+          = yield :footer
+        -else  
+          = get_chunk('footer_menu')
+          = get_chunk('partners')
+          - get_chunk('copyright') do |text|
+            .copy
+              = text
     / %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"}
     / :javascript
     / window.jQuery || document.write('<\/script>')

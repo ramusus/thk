@@ -18,6 +18,7 @@ Project::Application.routes.draw do
     match type.slug => "articles#articles_by_type", :as => type.slug, :slug => type.slug
   end
   match 'articles_mhl' => 'articles#articles_mhl', :as => "articles_mhl"
+  match 'test' => "pages#test"
   match "/:slug/" => "pages#show"
 
 end
