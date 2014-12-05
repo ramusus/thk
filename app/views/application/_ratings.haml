@@ -7,7 +7,7 @@
         %h3= title_chunk        
         - cache(expire_in: 1.minutes) do
           - list = YAML.load_file(Rails.application.config.raitings_path)
-          - n = 10
+          - n = 16
           .list
             -list.each do |key, val|
               -if n > 0
@@ -15,8 +15,9 @@
                 .item{class: val[:id] == '5012' ? 'active' : ''}
                   %span.number= key
                   %span.team= val[:name]
-                  %span.points= "#{val[:points]}/#{val[:games]}"
+                  %span.points{title: 'очки/игры'}= "#{val[:points]}/#{val[:games]}"
     - if (title_chunk && links_chunk)
       %hr
-    - if links_chunk  
-      = links_chunk
+    - if links_chunk
+      .rating_links
+        = links_chunk

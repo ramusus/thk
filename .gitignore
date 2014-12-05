@@ -9,9 +9,12 @@
 
 /config/database.yml
 /public/system/
+/db/rating.yml
+/db/dump.sql
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
+
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

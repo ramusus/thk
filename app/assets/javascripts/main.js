@@ -127,9 +127,13 @@ function ArticlesBlock(el, options) {
   }
 
   function init() {
-    $(el).on('click', '.loadmore', function() {
+    $(el).on('click', '.loadmore', function(e) {
+      var loader = $(this);
+      loader.addClass('pending');
       page = page + 1;
-      loadPage(page);
+      loadPage(page).always(function() {
+        loader.removeClass('pending');
+      });
     });
     loadPage(page).done(appendLoadmore)
   }

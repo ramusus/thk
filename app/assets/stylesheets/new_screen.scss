@@ -19,7 +19,6 @@
   }
 }
 
-
 .sidelist {
   h3 {
     margin: 1em 0;
@@ -71,39 +70,91 @@
   }
 }
 
-.sidelist .ratings {
-  h3 {
-    padding: 1em 2em 0;
-  }
-  .list {
-    .item {       
-      padding-left: 1.5em;
-      line-height: 2.2;
-      .number {
-        display: inline-block;
-        font-family: "PF Din Cond Pro Regular";
-        font-size: 110%;
-        width: 1em;
-        text-align: right;
-      }
-      .team {
-        display: inline-block;
-        margin-left: 0.5em;
-        width: 63%;
-      }
-      .points {
-        font-family: "PF Din Cond Pro Regular";
-        color: gray;
-      }
-      &.active {
-        color: white;
-        background: #1c75bb;
+.sidelist {
+  hr {
+    border-top: 1px gray solid;
+  }  
+  .ratings {
+    h3 {
+      padding: 1em 2em 0;
+    }
+    .list {
+      .item {       
+        padding-left: 1.5em;
+        line-height: 2;
+        .number {
+          display: inline-block;
+          font-family: "PF Din Cond Pro Regular";
+          font-size: 110%;
+          width: 1em;
+          text-align: right;
+        }
+        .team {
+          display: inline-block;
+          margin-left: 0.5em;
+          width: 63%;
+        }
         .points {
-           color: white;
+          font-family: "PF Din Cond Pro Regular";
+          color: gray;
+        }
+        &.active {
+          color: white;
+          background: #1c75bb;
+          .points {
+             color: white;
+          }
         }
       }
+    }      
+  }
+  .rating_links {
+    padding: 0.5em 1em 1em 2em;
+    h3 {
+      color: gray;       
+      text-transform: none;
+      font-family: "Liberation Sans";
+      font-size: 95%;
     }
 
-    
+    ul {
+      text-align: left; 
+      list-style: none;
+      padding: 0;
+      font-size: 90%;
+      li {
+        margin: 0.8em 0;
+
+      }
+    }
+  }
+}
+
+@keyframes rotator {
+  0%  {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(-360deg));
+  }
+}
+
+.loadmore {
+  padding-top: 35px;  
+  font: italic 17px "PF Din Cond Pro Regular", Tahoma, Arial, sans-serif;
+  color: #58595b;
+  cursor: pointer;
+  text-align: center;  
+  &:hover {
+    color: #1c75bb; 
+  }
+  &:before { 
+    content: url(/images/icon_loadmore.png);
+    display: block;
+  }
+  &.pending {
+    &:before {
+      animation: rotator 1s linear infinite;
+    }    
   }
 }
