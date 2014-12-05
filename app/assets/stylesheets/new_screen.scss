@@ -11,8 +11,8 @@
     }  
     &:hover {
       .article-image {
-        img {          
-          transform: scale(1.2);
+        img {
+          @include transform(scale(1.2))
         }        
       }
     }    
@@ -26,7 +26,8 @@
     font-family: "PF Din Cond Pro Regular";
     font-weight: normal;
     text-transform: uppercase;    
-  }  
+  }
+  margin-bottom: 1em;
 }
 
 @mixin digit-background($color) {
@@ -37,7 +38,7 @@
   background: linear-gradient(top, $color 0%, $color 49%, #ffffff 49%, #ffffff 51%, $color 51%, $color 100%); 
 }
 
-.birthdays {
+.sidelist .birthdays {
   padding: 1em 2em;
   .item {
     margin-bottom: 1em;
@@ -46,17 +47,63 @@
     text-transform: uppercase;
     &.today {
       .digit {
-        @include digit-background(#1c75bb);        
+        @include digit-background(#1c75bb);
       }
     }
   }
   .persons {
     padding-top: 0.3em;
+    .person_item {
+      margin-bottom: 0.3em;
+    }    
   }
   .article-title {    
     text-transform: uppercase;
     font-family: "PF Din Comp Pro Medium",Tahoma,Arial,sans-serif;
     margin-right: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
+  }
+  .position {
+    font-family: "PF Din Cond Pro Regular";
+    font-size: 80%;    
+    margin-left: 45px;
+    text-transform: lowercase;
+  }
+}
+
+.sidelist .ratings {
+  h3 {
+    padding: 1em 2em 0;
+  }
+  .list {
+    .item {       
+      padding-left: 1.5em;
+      line-height: 2.2;
+      .number {
+        display: inline-block;
+        font-family: "PF Din Cond Pro Regular";
+        font-size: 110%;
+        width: 1em;
+        text-align: right;
+      }
+      .team {
+        display: inline-block;
+        margin-left: 0.5em;
+        width: 63%;
+      }
+      .points {
+        font-family: "PF Din Cond Pro Regular";
+        color: gray;
+      }
+      &.active {
+        color: white;
+        background: #1c75bb;
+        .points {
+           color: white;
+        }
+      }
+    }
+
+    
   }
 }

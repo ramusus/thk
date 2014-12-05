@@ -36,7 +36,7 @@ class Person < ActiveRecord::Base
 
   def self.birthdays
     data = ::BirthdayTable.new
-    Person.select('id, name, birthday').where('birthday is not null').each do |item|
+    Person.select('id, name, birthday, position').where('birthday is not null').each do |item|
       data.add(item.birthday, item.serializable_hash)
     end
     data

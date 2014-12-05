@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   def test
     raise "ACCESS DENIED" if Rails.env != 'development'    
-    @persons = Person.select('id, name, birthday').where('birthday is not null').all
+    @persons = Person.select('id, name, birthday, position').where('birthday is not null').all
     @birthdays = Person.birthdays.find(Date.today, Date.today + 3.month)
   end
 

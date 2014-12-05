@@ -4,13 +4,16 @@
     .birthdays
       %h3 Дни рождения в команде
       - n = 4
-      -list.each do |date, value|
+      -list.sort.each do |date, value|
         - if(n > 0)
           - n -= 1
           .item.clear
             .article-date{class: Date.today == date ? 'today' : ''}
               .digit= date.day
-              =l date, :format => "%b / %a"            
+              =l date, :format => "%b / %a"
             .persons
               -value.each do |person|
-                =link_to person['name'], "/articles/415", class: 'article-title'
+                .person_item
+                  .article-title= person['name']
+                  - if person['position']
+                    .position= person['position'] 

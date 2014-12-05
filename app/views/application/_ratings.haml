@@ -1,0 +1,22 @@
+- title_chunk = get_chunk('tournament-name')
+- links_chunk = get_chunk('info_vhl')
+- if (title_chunk || links_chunk)
+  .sidelist 
+    - if title_chunk
+      .ratings
+        %h3= title_chunk        
+        - cache(expire_in: 1.minutes) do
+          - list = YAML.load_file(Rails.application.config.raitings_path)
+          - n = 10
+          .list
+            -list.each do |key, val|
+              -if n > 0
+                - n -= 1
+                .item{class: val[:id] == '5012' ? 'active' : ''}
+                  %span.number= key
+                  %span.team= val[:name]
+                  %span.points= "#{val[:points]}/#{val[:games]}"
+    - if (title_chunk && links_chunk)
+      %hr
+    - if links_chunk  
+      = links_chunk

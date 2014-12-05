@@ -20,6 +20,8 @@ gem 'pg'
 gem 'haml'
 gem 'ejs'
 gem 'rabl'
+gem 'whenever'
+gem 'nokogiri', '~> 1.5.9'
 
 #gem 'middleman', '~>3.0.11'
 #gem 'thinking-sphinx', '2.0.10'

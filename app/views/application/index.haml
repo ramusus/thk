@@ -32,8 +32,9 @@
   .sidebar.sidebar-left
     %ul.sidelist
       = render "sidebar"
-    =render "birthdays"  
-    
+    =render "birthdays"
+    =render "ratings"
+
   .main.page
     .block
       %ul.article-list.clear
@@ -65,7 +66,8 @@
                   %br
                   = l game.date, :format => "%d %b / %a"
                 %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
-    .sideblock.info
+    
+    -#.sideblock.info
       = get_chunk 'info_vhl'
     .sideblock
       %h3.sideblock-header Мы в соцсетях
