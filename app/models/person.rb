@@ -42,20 +42,21 @@ class Person < ActiveRecord::Base
     data
   end
 
+  def birthday_str
+    if birthday
+      return Russian::l(birthday, format: '%d %b %Y')
+    end
+    year = read_attribute :birthyear
+    "#{year} Г.Р."
+  end
+
   def stat
     stat = []
-    if self.height
-      stat.push("#{self.height} РОСТ")
-    end
-    if self.weight
-      stat.push("#{self.weight} ВЕС")
-    end
-    if self.birthyear
-      stat.push("#{self.birthyear} Г.Р.")
-    end
-    if self.experience
-      stat.push("СТАЖ #{self.experience} ЛЕТ")
-    end
+    stat.push("#{self.height} РОСТ") if self.height
+    stat.push("#{self.weight} ВЕС") if self.weight
+    stat.push(birthday_str) if birthday_str
+    stat.push("СТАЖ #{self.experience} ЛЕТ") if self.experience
+
     stat.join(' / ')
   end
 
@@ -67,8 +68,11 @@ class Person < ActiveRecord::Base
       include_fields :name
     end
     edit do
-      include_fields :name, :team, :number, :image 
-      field :birthday
+      include_fields :name, :team, :number, :image, :birthyear
+      field :birthday do
+        help 'Укажите день рождения, если персону следует показывать в блоке "Дни рождения" на главной странице сайта'
+      end
+      
       include_fields :experience, :position, :description, :notice, :weight, :height
       field :occupation, :enum do
         enum_method do

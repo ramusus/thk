@@ -1,13 +1,15 @@
 - title_chunk = get_chunk('tournament-name')
 - links_chunk = get_chunk('info_vhl')
+- count = get_chunk('tournament-count').to_i 
+- count = 16 unless count > 0
 - if (title_chunk || links_chunk)
-  .sidelist 
+  .sidelist     
     - if title_chunk
       .ratings
         %h3= title_chunk        
         - cache('rating_table', expires_in: 1.minutes) do
           - list = YAML.load_file(Rails.application.config.raitings_path)
-          - n = 16
+          - n = count
           .list
             -list.each do |key, val|
               -if n > 0

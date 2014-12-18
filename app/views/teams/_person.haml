@@ -11,8 +11,8 @@
   - if not person.position.empty?
     .person-status= person.position
   - if not person.description.empty?
-    .person-desc= person.description
-  .person-phys= person.stat
+    .person-desc= person.description    
+  .person-phys= person.stat if player
 
 -#
               .person-info
