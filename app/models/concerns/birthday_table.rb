@@ -8,7 +8,7 @@ class BirthdayTable
   end
 
   def add(birthday, ctx)    
-    key = date_to_key(birthday)
+    key = date_to_key(birthday)    
     @table[key] || (@table[key] = [])
     @table[key] << ctx
   end
@@ -28,12 +28,12 @@ class BirthdayTable
     list
   end
 
-  def date_to_key(date) 
-    return date.month * 31 + date.day
+  def date_to_key(date)     
+    return date.month * 32 + date.day
   end
 
   def key_to_date(key, year)
-    (month, day) = key.divmod(31)
+    (month, day) = key.divmod(32)    
     Date.new(year, month, day)
   end
   

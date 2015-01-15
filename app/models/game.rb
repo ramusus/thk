@@ -24,6 +24,7 @@ class Game < ActiveRecord::Base
   def self.past
     self.where("date < ?", Time.now - 3.hours)
   end
+  
   def self.future
     self.where("date > ?", Time.now - 3.hours)
   end
