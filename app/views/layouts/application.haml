@@ -52,6 +52,8 @@
               = link_to 'Матчи', championships_path
             %li
               = link_to 'Публикации', articles_path
+            %li.arrow_button
+              = link_to 'Купить билет', 'http://tverbilet.ru', target: '_blank'
       = yield
       %footer.footer
         -if content_for? :footer
