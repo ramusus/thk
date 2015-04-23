@@ -68,10 +68,10 @@
     end
   end
 
-  helper_method :get_chunk, :get_file
+  helper_method :get_chunk, :chunk_visible?, :get_file
 
   def get_chunk(code, &block) 
-    item = Chunk.find_by_code(code)    
+    item = Chunk.find_by_code(code)
     if(item and item.visible)
       text = item.content.html_safe
       yield text if block_given?
@@ -79,6 +79,11 @@
       text = ''       
     end
     text
+  end
+
+  def chunk_visible?(code)
+    item = Chunk.where(code: code).first
+    item and item.visible
   end
 
   def get_file(name, &block) 

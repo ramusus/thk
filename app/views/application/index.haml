@@ -40,32 +40,33 @@
       %ul.article-list.clear
         -#= render :partial => 'article', :collection => @articles
   .sidebar
-    .sideblock.tabs
-      %h3.sideblock-header МАТЧИ
-      %p.tabs-switcher
-        %span.tabs-switcher-item.active ближайшие
-        %span.tabs-switcher-item прошедшие
-      .tabs-container
-        .tabs-tab.active
-          %ul.list
-            - Game.future.reorder('date ASC').slice(0,3).each do |game|
-              %li
-                .article-date
-                  .digit= l game.date, :format => "%d"
-                  %br
-                  = l game.date, :format => "%b / %a / %H:%M"
-                %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
-        .tabs-tab
-          %ul.list
-            - Game.past.reorder('date DESC').slice(0,3).each do |game|
-              %li
-                .score
-                  %span.digit= game.score_host
-                  %span.score-delim :
-                  %span.digit= game.score_guest
-                  %br
-                  = l game.date, :format => "%d %b / %a"
-                %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
+    - if chunk_visible?(:matches)
+      .sideblock.tabs
+        %h3.sideblock-header МАТЧИ
+        %p.tabs-switcher
+          %span.tabs-switcher-item.active ближайшие
+          %span.tabs-switcher-item прошедшие
+        .tabs-container
+          .tabs-tab.active
+            %ul.list
+              - Game.future.reorder('date ASC').slice(0,3).each do |game|
+                %li
+                  .article-date
+                    .digit= l game.date, :format => "%d"
+                    %br
+                    = l game.date, :format => "%b / %a / %H:%M"
+                  %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
+          .tabs-tab
+            %ul.list
+              - Game.past.reorder('date DESC').slice(0,3).each do |game|
+                %li
+                  .score
+                    %span.digit= game.score_host
+                    %span.score-delim :
+                    %span.digit= game.score_guest
+                    %br
+                    = l game.date, :format => "%d %b / %a"
+                  %p= game.home ? "#{game.team} : #{game.rival}" : "#{game.rival}: #{game.team}"
     
     -#.sideblock.info
       = get_chunk 'info_vhl'
