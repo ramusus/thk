@@ -61,11 +61,11 @@
         %h2.block-header
           %span Тренеры
         %ul.person-list
-          = render :partial => 'person', :collection => @people.coaches, :locals => {:player => false}
+          = render :partial => 'person', :collection => @people.coaches.reorder(:number), :locals => {:player => false}
     - if @people.direction.count > 0
       .block#direction
         %h2.block-header
           %span Руководство
         %ul.person-list
-          = render :partial => 'person', :collection => @people.direction, :locals => {:player => false}
+          = render :partial => 'person', :collection => @people.direction.reorder(:number), :locals => {:player => false}
   = render "right_column"

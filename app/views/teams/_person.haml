@@ -5,7 +5,7 @@
     - if person.image.exists?
       %img{:src => person.image, :alt => person.name}/
   .person-name
-    - if person.number
+    - if player and person.number
       %span.person-num= "%02d" % person.number
     = person.name
   - if not person.position.empty?
