@@ -6,7 +6,7 @@
   .sidelist     
     - if title_chunk
       .ratings
-        %h3= title_chunk        
+        %h3= title_chunk
         - cache('rating_table', expires_in: 1.minutes) do
           - list = YAML.load_file(Rails.application.config.raitings_path)
           - n = count

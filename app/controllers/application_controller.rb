@@ -76,7 +76,7 @@
       text = item.content.html_safe
       yield text if block_given?
     else 
-      text = ''       
+      text = nil
     end
     text
   end
