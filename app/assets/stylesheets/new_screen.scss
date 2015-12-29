@@ -186,3 +186,64 @@
     }
   }
 }
+
+.rk_content {
+  position: relative; 
+  margin: 0 -33px;   
+  background: #EEE9D6;
+  .rk_logo {
+    text-align: center;
+    background: url(image-path('rk-stripes.png')) repeat-x center;
+    padding: 2em 0;
+  }
+  .rk_block {
+    text-align: center;
+    padding: 2em 0;    
+    margin: 0 33px;
+    .time {
+      font-size: 140%;
+    }    
+    .info {
+      @include flexbox;
+      @include align-items(center);
+      margin: 1.5em 0;
+      .team {
+        font-size: 180%;
+        font-family: sans-serif;
+        font-weight: bold;
+        @include flex(1);
+        &:first-child {
+          text-align: right;
+        }
+        &:last-child {
+          text-align: left;
+        }
+      }
+      .score {
+        margin: 0 2em;        
+      }
+      .score-delim {
+        font-weight: bold;
+      }
+      .versus {
+        $size: 2em;
+        font-size: 140%;
+        display: inline-block;
+        background: black;
+        color: white;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        box-sizing: padding-box;
+        vertical-align: middle;
+        line-height: $size;
+      }
+    }
+    .text {
+      font-size: 110%;
+    }
+  }
+  .rk_block + .rk_block {
+    border-top: 4px solid #FD212D;    
+  }
+}

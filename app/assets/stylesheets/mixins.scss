@@ -41,3 +41,59 @@
 	-moz-perspective-origin: $args;
 	perspective-origin: $args;
 }
+
+@mixin flexbox {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-items($arg) {
+  align-items: $arg;
+  -webkit-align-items: $arg;  
+}
+
+@mixin align-self($arg) {
+  align-self: $arg;
+  -webkit-align-self: $arg;
+}
+
+@mixin justify-content($arg) {
+  justify-content: $arg;
+  -webkit-justify-content: $arg;
+}
+
+@mixin align-content($arg) {
+  align-content: $arg;
+  -webkit-align-content: $arg;
+}
+
+@mixin flex-direction($arg) {
+  flex-direction: $arg;
+  -webkit-flex-direction: $arg;
+}
+
+@mixin flex-wrap($arg) {
+  flex-wrap: $arg;
+  -webkit-flex-wrap: $arg;
+}
+
+@mixin flex($arg) {
+  flex: $arg;
+  -webkit-flex: $arg;
+}
+
+@mixin flex-basis($arg) {
+  flex-basis: $arg;
+  -webkit-flex-basis: $arg;
+}
+
+@mixin flex-grow($arg) {
+  flex-grow: $arg;
+  -webkit-flex-grow: $arg;
+}
+
+@mixin flex-shrink($arg) {
+  flex-shrink: $arg;
+  -webkit-flex-shrink: $arg;
+}

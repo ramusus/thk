@@ -488,7 +488,7 @@ h2 {
   display: block;
   width: 166px;
   height: 176px;
-  background: url(../images/logo.png) no-repeat;
+  background: url(../images/logo.png) no-repeat;  
   text-indent: -1000em; }
 
 /* line 152, screen.scss */
@@ -505,7 +505,7 @@ h2 {
     left: -17px;
     width: 177px;
     height: 183px;
-    background: url(../images/logo2.png); }
+    background: url(../images/logo2.png) no-repeat; }
   /* line 166, screen.scss */
   .sticky .menu {
     left: 160px;
