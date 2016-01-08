@@ -14,31 +14,13 @@
     .rk_content
       .rk_logo= image_tag('rk-logo.png')
       = content
-      .rk_block 
-        .time 6 февраля в 15:00 (предварительно)
-        .info
-          %span.team Сборная правительства тверской области
-          %span.score
-            %span.digit 3          
-            %span.score-delim :
-            %span.digit 4
-          %span.team Сборная высшей хоккейной лиги 
-        .text
-          Товарищеский матч, вход свободный, стадион "Химик"
-      .rk_block 
-        .time 6 февраля в 15:00 (предварительно)
-        .info
-          %span.team Сборная правительства тверской области
-          %span.score.versus VS
-          %span.team Сборная высшей хоккейной лиги 
-        .text
-          Товарищеский матч, вход свободный, стадион "Химик"    
 
 .content.columns.clear
 
-  .main.page
-    %h1 Публикации
-    = render "top_menu"
+  .main.page{id: "articles_#{@type.try(:slug)}"}
+    .articles_top
+      %h1 Публикации
+      = render "top_menu"
     .articles
       .block
         %ul.article-list.clear

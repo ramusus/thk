@@ -185,23 +185,37 @@
       height: 100%;
     }
   }
+  li.actual_button {
+    position: absolute;
+    right: 2em;
+    top: 0;
+  }
 }
 
 .rk_content {
   position: relative; 
-  margin: 0 -33px;   
-  background: #EEE9D6;
+  margin: 0 -33px;
+  background: #EEE9D6;  
+  padding-bottom: 2em;
   .rk_logo {
     text-align: center;
     background: url(image-path('rk-stripes.png')) repeat-x center;
     padding: 2em 0;
-  }
+  }  
   .rk_block {
     text-align: center;
-    padding: 2em 0;    
+    padding: 0 0 2em;    
     margin: 0 33px;
+    a {
+      color: black;
+      text-decoration: underline;
+      margin: 0 0.5em;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     .time {
-      font-size: 140%;
+      font-size: 130%;
     }    
     .info {
       @include flexbox;
@@ -226,8 +240,8 @@
         font-weight: bold;
       }
       .versus {
-        $size: 2em;
-        font-size: 140%;
+        $size: 1.9em;
+        font-size: 120%;
         display: inline-block;
         background: black;
         color: white;
@@ -241,9 +255,20 @@
     }
     .text {
       font-size: 110%;
+      line-height: 1.4;
     }
   }
   .rk_block + .rk_block {
     border-top: 4px solid #FD212D;    
+    padding-top: 2em;
+  }
+}
+
+.main.page#articles_rk {
+  .articles_top {
+    display: none;    
+  }
+  .articles {
+    margin-top: 108px;
   }
 }
