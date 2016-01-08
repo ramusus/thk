@@ -55,10 +55,9 @@
             - get_chunk('ticket_link') do |link|
               %li.arrow_button
                 = link_to 'Купить билет', link, target: '_blank'
-            - get_chunk('rk_content') do |link|
-              - unless params[:slug] == 'rk'
-                %li.active.actual_button
-                  = link_to 'Русская Классика', rk_path
+            - get_chunk('rk_content') do |link|              
+              %li.actual_button{class: (params[:slug] == 'rk' ? 'active' : '')}
+                = link_to 'Русская Классика', rk_path
 
       = yield
       %footer.footer

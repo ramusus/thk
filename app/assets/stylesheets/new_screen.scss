@@ -223,7 +223,7 @@
       margin: 1.5em 0;
       .team {
         font-size: 180%;
-        font-family: sans-serif;
+        font-family: "PF Din Cond Pro Regular", sans-serif;
         font-weight: bold;
         @include flex(1);
         &:first-child {
@@ -269,6 +269,10 @@
     display: none;    
   }
   .articles {
-    margin-top: 108px;
+    margin-top: 50px;
   }
+}
+
+.main.page#articles_rk + .sidebar {
+  margin-top: 50px;
 }
