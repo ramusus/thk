@@ -1,0 +1,19 @@
+- title_chunk = get_chunk('playoff-name')
+- if (title_chunk)
+  - cache('playoff_table', expires_in: 1.minutes) do
+    - list = YAML.load_file(Rails.application.config.playoff_path)
+    .sidelist
+      .ratings
+        %h3= title_chunk
+        - list.each do |i, round|
+          .playoff
+            %h4= round['name']
+            .list
+              - round['teams'].each do |j, teams|
+                .item
+                  %span.team
+                    .team_item= "#{teams['a']['name']}"
+                    .team_item= "#{teams['b']['name']}"
+                  %span.points= "#{teams['a']['wins']}:#{teams['b']['wins']}"
+          - if i > 1
+            %hr

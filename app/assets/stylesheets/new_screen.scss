@@ -20,7 +20,7 @@
 }
 
 .sidelist {
-  h3 {
+  h2, h3, h4 {
     margin: 1em 0;
     font-family: "PF Din Cond Pro Regular";
     font-weight: normal;
@@ -75,9 +75,16 @@
     border-top: 1px gray solid;
   }  
   .ratings {
+    h2 {
+      padding: 1em 2em 0;
+    }    
     h3 {
       padding: 1em 2em 0;
     }
+    h4 {
+      padding: 0.5em 2em 0;
+    }
+
     .list {
       .item {       
         padding-left: 1.5em;
@@ -127,6 +134,23 @@
 
       }
     }
+  }
+  .playoff {
+    .list {
+      .item {
+        margin-bottom: 0.5em;
+        .team {
+          vertical-align: middle;
+        }
+        .team_item {
+          font-size: 80%;
+          line-height: 1.4;
+        }
+        .points {          
+          vertical-align: middle;
+        }
+      }
+    } 
   }
 }
 

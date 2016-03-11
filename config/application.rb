@@ -60,5 +60,6 @@ module Project
     config.assets.version = '1.0'
 
     config.raitings_path = Rails.root.join('db', 'rating.yml').to_s
+    config.playoff_path = Rails.root.join('db', 'playoff.yml').to_s
   end
 end

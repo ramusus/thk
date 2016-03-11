@@ -1,0 +1,592 @@
+---
+2:
+  name: 1/4 финала
+  teams:
+    193:
+      a:
+        id: 193
+        name: ТХК
+        city: Тверь
+        wins: 0
+      b:
+        id: 283
+        name: Динамо
+        city: Балашиха
+        wins: 0
+      games:
+        49355:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49359:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49363:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49367:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+    165:
+      a:
+        id: 165
+        name: Сарыарка
+        city: Караганда
+        wins: 0
+      b:
+        id: 192
+        name: Торос
+        city: Нефтекамск
+        wins: 0
+      games:
+        49356:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49360:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49364:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49368:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+    48:
+      a:
+        id: 48
+        name: Ижсталь
+        city: Ижевск
+        wins: 0
+      b:
+        id: 196
+        name: ХК Рязань
+        city: Рязань
+        wins: 0
+      games:
+        49357:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49361:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49365:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49369:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+    61:
+      a:
+        id: 61
+        name: Нефтяник
+        city: Альметьевск
+        wins: 0
+      b:
+        id: 199
+        name: Ермак
+        city: Ангарск
+        wins: 0
+      games:
+        49358:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49362:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49366:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+        49370:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 0
+            win: 0
+1:
+  name: 1/8 финала
+  teams:
+    193:
+      a:
+        id: 193
+        name: ТХК
+        city: Тверь
+        wins: 4
+      b:
+        id: 382
+        name: Челмет
+        city: Челябинск
+        wins: 3
+      games:
+        49222:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49230:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49238:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 4
+            win: 1
+        49246:
+          a:
+            score: 1
+            win: 1
+          b:
+            score: 0
+            win: 0
+        49264:
+          a:
+            score: 5
+            win: 1
+          b:
+            score: 4
+            win: 0
+        49323:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 4
+            win: 1
+        49352:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 2
+            win: 0
+    28:
+      a:
+        id: 28
+        name: Спутник
+        city: Нижний Тагил
+        wins: 3
+      b:
+        id: 192
+        name: Торос
+        city: Нефтекамск
+        wins: 4
+      games:
+        49223:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49231:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49239:
+          a:
+            score: 4
+            win: 1
+          b:
+            score: 2
+            win: 0
+        49247:
+          a:
+            score: 4
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49317:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
+        49321:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 2
+            win: 0
+        49353:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 4
+            win: 1
+    68:
+      a:
+        id: 68
+        name: Буран
+        city: Воронеж
+        wins: 3
+      b:
+        id: 283
+        name: Динамо
+        city: Балашиха
+        wins: 4
+      games:
+        49224:
+          a:
+            score: 5
+            win: 1
+          b:
+            score: 4
+            win: 0
+        49232:
+          a:
+            score: 5
+            win: 1
+          b:
+            score: 4
+            win: 0
+        49240:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 2
+            win: 0
+        49248:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
+        49324:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49344:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49354:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 3
+            win: 1
+    48:
+      a:
+        id: 48
+        name: Ижсталь
+        city: Ижевск
+        wins: 4
+      b:
+        id: 210
+        name: СКА-Нева
+        city: Санкт-Петербург
+        wins: 1
+      games:
+        49225:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49233:
+          a:
+            score: 4
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49241:
+          a:
+            score: 6
+            win: 1
+          b:
+            score: 4
+            win: 0
+        49249:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49265:
+          a:
+            score: 4
+            win: 1
+          b:
+            score: 2
+            win: 0
+    32:
+      a:
+        id: 32
+        name: Молот-Прикамье
+        city: Пермь
+        wins: 2
+      b:
+        id: 196
+        name: ХК Рязань
+        city: Рязань
+        wins: 4
+      games:
+        49226:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 2
+            win: 0
+        49234:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 4
+            win: 1
+        49242:
+          a:
+            score: 3
+            win: 0
+          b:
+            score: 4
+            win: 1
+        49250:
+          a:
+            score: 4
+            win: 1
+          b:
+            score: 3
+            win: 0
+        49266:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
+        49325:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 3
+            win: 1
+    61:
+      a:
+        id: 61
+        name: Нефтяник
+        city: Альметьевск
+        wins: 4
+      b:
+        id: 267
+        name: ХК Саров
+        city: Саров
+        wins: 0
+      games:
+        49227:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49235:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49243:
+          a:
+            score: 2
+            win: 1
+          b:
+            score: 0
+            win: 0
+        49251:
+          a:
+            score: 5
+            win: 1
+          b:
+            score: 1
+            win: 0
+    109:
+      a:
+        id: 109
+        name: Зауралье
+        city: Курган
+        wins: 1
+      b:
+        id: 199
+        name: Ермак
+        city: Ангарск
+        wins: 4
+      games:
+        49228:
+          a:
+            score: 0
+            win: 0
+          b:
+            score: 1
+            win: 1
+        49236:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 3
+            win: 1
+        49244:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49252:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
+        49320:
+          a:
+            score: 2
+            win: 0
+          b:
+            score: 5
+            win: 1
+    110:
+      a:
+        id: 110
+        name: Торпедо
+        city: Усть-Каменогорск
+        wins: 2
+      b:
+        id: 165
+        name: Сарыарка
+        city: Караганда
+        wins: 4
+      games:
+        49229:
+          a:
+            score: 2
+            win: 1
+          b:
+            score: 1
+            win: 0
+        49237:
+          a:
+            score: 3
+            win: 1
+          b:
+            score: 2
+            win: 0
+        49245:
+          a:
+            score: 3
+            win: 0
+          b:
+            score: 5
+            win: 1
+        49253:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
+        49319:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 4
+            win: 1
+        49326:
+          a:
+            score: 1
+            win: 0
+          b:
+            score: 2
+            win: 1
